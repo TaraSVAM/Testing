@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="2" ignored="22" total="24" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="427705" started-at="2019-10-01T20:43:02 IST" finished-at="2019-10-01T20:50:10 IST">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="427705" started-at="2019-10-01T20:43:02 IST" finished-at="2019-10-01T20:50:10 IST">
+      <class name="com.svam.twentyeighty.tests.Regression">
+        <test-method status="PASS" signature="appInitilization()[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="appInitilization" is-config="true" duration-ms="236" started-at="2019-10-01T20:43:02 IST" finished-at="2019-10-01T20:43:02 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- appInitilization -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="217" started-at="2019-10-01T20:43:02 IST" finished-at="2019-10-01T20:43:02 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.verifyIntacctID()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="FAIL" signature="verifyIntacctID()[pri:2, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="verifyIntacctID" duration-ms="178638" started-at="2019-10-01T20:43:02 IST" finished-at="2019-10-01T20:46:01 IST">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The Serached Result did not expect to find [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The Serached Result did not expect to find [true] but found [false]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.failNotEquals(Assert.java:969)
+at org.testng.Assert.assertTrue(Assert.java:43)
+at com.svam.twentyeighty.tests.Regression.verifyIntacctID(Regression.java:224)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyIntacctID -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="286" started-at="2019-10-01T20:46:01 IST" finished-at="2019-10-01T20:46:01 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.verifyIntacctID()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=verifyIntacctID status=FAILURE method=Regression.verifyIntacctID()[pri:2, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="1" started-at="2019-10-01T20:46:01 IST" finished-at="2019-10-01T20:46:01 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_Dummy_Intacct_ID_Save_Record()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="FAIL" signature="CPC_Dummy_Intacct_ID_Save_Record()[pri:3, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="CPC_Dummy_Intacct_ID_Save_Record" duration-ms="247007" started-at="2019-10-01T20:46:01 IST" finished-at="2019-10-01T20:50:08 IST">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The Serached Result did not expect to find [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The Serached Result did not expect to find [true] but found [false]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.failNotEquals(Assert.java:969)
+at org.testng.Assert.assertTrue(Assert.java:43)
+at com.svam.twentyeighty.tests.Regression.CPC_Dummy_Intacct_ID_Save_Record(Regression.java:297)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CPC_Dummy_Intacct_ID_Save_Record -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="325" started-at="2019-10-01T20:50:08 IST" finished-at="2019-10-01T20:50:09 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_Dummy_Intacct_ID_Save_Record()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=CPC_Dummy_Intacct_ID_Save_Record status=FAILURE method=Regression.CPC_Dummy_Intacct_ID_Save_Record()[pri:3, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="generateResult()[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="generateResult" is-config="true" duration-ms="948" started-at="2019-10-01T20:50:09 IST" finished-at="2019-10-01T20:50:10 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateResult -->
+        <test-method status="PASS" signature="suiteTearDown()[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="suiteTearDown" is-config="true" duration-ms="5" started-at="2019-10-01T20:50:10 IST" finished-at="2019-10-01T20:50:10 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteTearDown -->
+      </class> <!-- com.svam.twentyeighty.tests.Regression -->
+      <class name="com.svam.driver.TestDriver">
+        <test-method status="PASS" signature="suiteSetup()[pri:0, instance:com.svam.driver.TestDriver@5faeada1]" name="suiteSetup" is-config="true" duration-ms="13243" started-at="2019-10-01T20:42:49 IST" finished-at="2019-10-01T20:43:02 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetup -->
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.svam.driver.TestDriver@5faeada1]" name="testTearDown" is-config="true" duration-ms="249" started-at="2019-10-01T20:50:10 IST" finished-at="2019-10-01T20:50:10 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTearDown -->
+      </class> <!-- com.svam.driver.TestDriver -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
