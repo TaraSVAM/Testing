@@ -5,13 +5,13 @@
     <classes>
       <class name="com.svam.twentyeighty.tests.Regression">
         <methods>
+          <include name="Notes_CPC_AwaitingAccess"/>
           <include name="appInitilization"/>
           <include name="generateResult"/>
+          <include name="CPC_License_validation"/>
           <include name="startReporting"/>
           <include name="suiteSetup"/>
-          <include name="CPC_Dummy_Intacct_ID_Save_Record"/>
           <include name="suiteTearDown"/>
-          <include name="verifyIntacctID"/>
           <include name="testTearDown"/>
           <include name="testResult"/>
         </methods>

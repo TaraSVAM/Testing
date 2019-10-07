@@ -1,17 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" ignored="22" total="24" passed="0">
+<testng-results skipped="0" failed="0" ignored="2" total="24" passed="22">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="427705" started-at="2019-10-01T20:43:02 IST" finished-at="2019-10-01T20:50:10 IST">
+  <suite name="Suite" duration-ms="3641840" started-at="2019-10-07T20:06:32 IST" finished-at="2019-10-07T21:07:14 IST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="427705" started-at="2019-10-01T20:43:02 IST" finished-at="2019-10-01T20:50:10 IST">
+    <test name="Test" duration-ms="3641840" started-at="2019-10-07T20:06:32 IST" finished-at="2019-10-07T21:07:14 IST">
       <class name="com.svam.twentyeighty.tests.Regression">
-        <test-method status="PASS" signature="appInitilization()[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="appInitilization" is-config="true" duration-ms="236" started-at="2019-10-01T20:43:02 IST" finished-at="2019-10-01T20:43:02 IST">
+        <test-method status="PASS" signature="appInitilization()[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="appInitilization" is-config="true" duration-ms="17" started-at="2019-10-07T20:06:32 IST" finished-at="2019-10-07T20:06:32 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- appInitilization -->
-        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="217" started-at="2019-10-01T20:43:02 IST" finished-at="2019-10-01T20:43:02 IST">
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="74" started-at="2019-10-07T20:06:32 IST" finished-at="2019-10-07T20:06:32 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_Intacct_Id_Added()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="CPC_Intacct_Id_Added()[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="CPC_Intacct_Id_Added" duration-ms="51185" started-at="2019-10-07T20:06:32 IST" finished-at="2019-10-07T20:07:23 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CPC_Intacct_Id_Added -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="362" started-at="2019-10-07T20:07:23 IST" finished-at="2019-10-07T20:07:24 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_Intacct_Id_Added()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=CPC_Intacct_Id_Added status=SUCCESS method=Regression.CPC_Intacct_Id_Added()[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="CPC_Intacct_ID_Details_Work()[pri:1, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="CPC_Intacct_ID_Details_Work" duration-ms="145854" started-at="2019-10-07T20:07:24 IST" finished-at="2019-10-07T20:09:49 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CPC_Intacct_ID_Details_Work -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="0" started-at="2019-10-07T20:07:24 IST" finished-at="2019-10-07T20:07:24 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_Intacct_ID_Details_Work()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="319" started-at="2019-10-07T20:09:49 IST" finished-at="2019-10-07T20:09:50 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_Intacct_ID_Details_Work()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=CPC_Intacct_ID_Details_Work status=SUCCESS method=Regression.CPC_Intacct_ID_Details_Work()[pri:1, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="0" started-at="2019-10-07T20:09:50 IST" finished-at="2019-10-07T20:09:50 IST">
           <params>
             <param index="0">
               <value>
@@ -22,52 +84,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startReporting -->
-        <test-method status="FAIL" signature="verifyIntacctID()[pri:2, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="verifyIntacctID" duration-ms="178638" started-at="2019-10-01T20:43:02 IST" finished-at="2019-10-01T20:46:01 IST">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The Serached Result did not expect to find [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The Serached Result did not expect to find [true] but found [false]
-at org.testng.Assert.fail(Assert.java:97)
-at org.testng.Assert.failNotEquals(Assert.java:969)
-at org.testng.Assert.assertTrue(Assert.java:43)
-at com.svam.twentyeighty.tests.Regression.verifyIntacctID(Regression.java:224)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:770)
-at org.testng.TestRunner.run(TestRunner.java:591)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-at org.testng.TestNG.runSuites(TestNG.java:1032)
-at org.testng.TestNG.run(TestNG.java:1000)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method status="PASS" signature="verifyIntacctID()[pri:2, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="verifyIntacctID" duration-ms="78423" started-at="2019-10-07T20:09:50 IST" finished-at="2019-10-07T20:11:08 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyIntacctID -->
-        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="286" started-at="2019-10-01T20:46:01 IST" finished-at="2019-10-01T20:46:01 IST">
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="279" started-at="2019-10-07T20:11:08 IST" finished-at="2019-10-07T20:11:08 IST">
           <params>
             <param index="0">
               <value>
@@ -76,14 +97,14 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=verifyIntacctID status=FAILURE method=Regression.verifyIntacctID()[pri:2, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+                <![CDATA[[TestResult name=verifyIntacctID status=SUCCESS method=Regression.verifyIntacctID()[pri:2, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testResult -->
-        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="1" started-at="2019-10-01T20:46:01 IST" finished-at="2019-10-01T20:46:01 IST">
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="0" started-at="2019-10-07T20:11:08 IST" finished-at="2019-10-07T20:11:08 IST">
           <params>
             <param index="0">
               <value>
@@ -94,52 +115,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startReporting -->
-        <test-method status="FAIL" signature="CPC_Dummy_Intacct_ID_Save_Record()[pri:3, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="CPC_Dummy_Intacct_ID_Save_Record" duration-ms="247007" started-at="2019-10-01T20:46:01 IST" finished-at="2019-10-01T20:50:08 IST">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The Serached Result did not expect to find [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The Serached Result did not expect to find [true] but found [false]
-at org.testng.Assert.fail(Assert.java:97)
-at org.testng.Assert.failNotEquals(Assert.java:969)
-at org.testng.Assert.assertTrue(Assert.java:43)
-at com.svam.twentyeighty.tests.Regression.CPC_Dummy_Intacct_ID_Save_Record(Regression.java:297)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:770)
-at org.testng.TestRunner.run(TestRunner.java:591)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-at org.testng.TestNG.runSuites(TestNG.java:1032)
-at org.testng.TestNG.run(TestNG.java:1000)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method status="PASS" signature="CPC_Dummy_Intacct_ID_Save_Record()[pri:3, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="CPC_Dummy_Intacct_ID_Save_Record" duration-ms="126873" started-at="2019-10-07T20:11:08 IST" finished-at="2019-10-07T20:13:15 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CPC_Dummy_Intacct_ID_Save_Record -->
-        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="325" started-at="2019-10-01T20:50:08 IST" finished-at="2019-10-01T20:50:09 IST">
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="293" started-at="2019-10-07T20:13:15 IST" finished-at="2019-10-07T20:13:16 IST">
           <params>
             <param index="0">
               <value>
@@ -148,28 +128,586 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=CPC_Dummy_Intacct_ID_Save_Record status=FAILURE method=Regression.CPC_Dummy_Intacct_ID_Save_Record()[pri:3, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+                <![CDATA[[TestResult name=CPC_Dummy_Intacct_ID_Save_Record status=SUCCESS method=Regression.CPC_Dummy_Intacct_ID_Save_Record()[pri:3, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testResult -->
-        <test-method status="PASS" signature="generateResult()[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="generateResult" is-config="true" duration-ms="948" started-at="2019-10-01T20:50:09 IST" finished-at="2019-10-01T20:50:10 IST">
+        <test-method status="PASS" signature="CPC_Intacct_ID_Manadtory_Field()[pri:4, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="CPC_Intacct_ID_Manadtory_Field" duration-ms="78352" started-at="2019-10-07T20:13:16 IST" finished-at="2019-10-07T20:14:34 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CPC_Intacct_ID_Manadtory_Field -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="0" started-at="2019-10-07T20:13:16 IST" finished-at="2019-10-07T20:13:16 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_Intacct_ID_Manadtory_Field()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="280" started-at="2019-10-07T20:14:34 IST" finished-at="2019-10-07T20:14:34 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_Intacct_ID_Manadtory_Field()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=CPC_Intacct_ID_Manadtory_Field status=SUCCESS method=Regression.CPC_Intacct_ID_Manadtory_Field()[pri:4, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="1" started-at="2019-10-07T20:14:34 IST" finished-at="2019-10-07T20:14:34 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_Expectedstartdate()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="CPC_Expectedstartdate()[pri:5, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="CPC_Expectedstartdate" duration-ms="80859" started-at="2019-10-07T20:14:34 IST" finished-at="2019-10-07T20:15:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CPC_Expectedstartdate -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="305" started-at="2019-10-07T20:15:55 IST" finished-at="2019-10-07T20:15:55 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_Expectedstartdate()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=CPC_Expectedstartdate status=SUCCESS method=Regression.CPC_Expectedstartdate()[pri:5, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="Futurestartdate_sessionmapping()[pri:6, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="Futurestartdate_sessionmapping" duration-ms="142651" started-at="2019-10-07T20:15:55 IST" finished-at="2019-10-07T20:18:18 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Futurestartdate_sessionmapping -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="0" started-at="2019-10-07T20:15:55 IST" finished-at="2019-10-07T20:15:55 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.Futurestartdate_sessionmapping()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="297" started-at="2019-10-07T20:18:18 IST" finished-at="2019-10-07T20:18:18 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.Futurestartdate_sessionmapping()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=Futurestartdate_sessionmapping status=SUCCESS method=Regression.Futurestartdate_sessionmapping()[pri:6, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="1" started-at="2019-10-07T20:18:18 IST" finished-at="2019-10-07T20:18:18 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_Intacct_ID_Details_UIElements() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="CPC_Intacct_ID_Details_UIElements()[pri:7, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="CPC_Intacct_ID_Details_UIElements" duration-ms="134797" started-at="2019-10-07T20:18:18 IST" finished-at="2019-10-07T20:20:33 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CPC_Intacct_ID_Details_UIElements -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="348" started-at="2019-10-07T20:20:33 IST" finished-at="2019-10-07T20:20:33 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_Intacct_ID_Details_UIElements() throws java.lang.Exception]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=CPC_Intacct_ID_Details_UIElements status=SUCCESS method=Regression.CPC_Intacct_ID_Details_UIElements()[pri:7, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="0" started-at="2019-10-07T20:20:33 IST" finished-at="2019-10-07T20:20:33 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_ProcessedAccesGranted()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="CPC_ProcessedAccesGranted()[pri:8, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="CPC_ProcessedAccesGranted" duration-ms="155112" started-at="2019-10-07T20:20:33 IST" finished-at="2019-10-07T20:23:09 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CPC_ProcessedAccesGranted -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="323" started-at="2019-10-07T20:23:09 IST" finished-at="2019-10-07T20:23:09 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_ProcessedAccesGranted()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=CPC_ProcessedAccesGranted status=SUCCESS method=Regression.CPC_ProcessedAccesGranted()[pri:8, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="1" started-at="2019-10-07T20:23:09 IST" finished-at="2019-10-07T20:23:09 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_Deleted()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="CPC_Deleted()[pri:9, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="CPC_Deleted" duration-ms="159324" started-at="2019-10-07T20:23:09 IST" finished-at="2019-10-07T20:25:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CPC_Deleted -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="297" started-at="2019-10-07T20:25:48 IST" finished-at="2019-10-07T20:25:49 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_Deleted()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=CPC_Deleted status=SUCCESS method=Regression.CPC_Deleted()[pri:9, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="CPC_Pending()[pri:10, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="CPC_Pending" duration-ms="75542" started-at="2019-10-07T20:25:49 IST" finished-at="2019-10-07T20:27:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CPC_Pending -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="0" started-at="2019-10-07T20:25:49 IST" finished-at="2019-10-07T20:25:49 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_Pending()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="270" started-at="2019-10-07T20:27:04 IST" finished-at="2019-10-07T20:27:04 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_Pending()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=CPC_Pending status=SUCCESS method=Regression.CPC_Pending()[pri:10, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="CPC_AwaitingAccess()[pri:11, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="CPC_AwaitingAccess" duration-ms="131282" started-at="2019-10-07T20:27:04 IST" finished-at="2019-10-07T20:29:16 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CPC_AwaitingAccess -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="0" started-at="2019-10-07T20:27:04 IST" finished-at="2019-10-07T20:27:04 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_AwaitingAccess()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="299" started-at="2019-10-07T20:29:16 IST" finished-at="2019-10-07T20:29:16 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_AwaitingAccess()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=CPC_AwaitingAccess status=SUCCESS method=Regression.CPC_AwaitingAccess()[pri:11, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="Notes_CPC_Pending()[pri:12, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="Notes_CPC_Pending" duration-ms="213918" started-at="2019-10-07T20:29:16 IST" finished-at="2019-10-07T20:32:50 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_CPC_Pending -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="0" started-at="2019-10-07T20:29:16 IST" finished-at="2019-10-07T20:29:16 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.Notes_CPC_Pending()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="303" started-at="2019-10-07T20:32:50 IST" finished-at="2019-10-07T20:32:50 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.Notes_CPC_Pending()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=Notes_CPC_Pending status=SUCCESS method=Regression.Notes_CPC_Pending()[pri:12, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="1" started-at="2019-10-07T20:32:50 IST" finished-at="2019-10-07T20:32:50 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.Notes_CPC_AwaitingAccess()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="Notes_CPC_AwaitingAccess()[pri:13, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="Notes_CPC_AwaitingAccess" duration-ms="217135" started-at="2019-10-07T20:32:50 IST" finished-at="2019-10-07T20:36:27 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_CPC_AwaitingAccess -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="311" started-at="2019-10-07T20:36:27 IST" finished-at="2019-10-07T20:36:28 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.Notes_CPC_AwaitingAccess()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=Notes_CPC_AwaitingAccess status=SUCCESS method=Regression.Notes_CPC_AwaitingAccess()[pri:13, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="1" started-at="2019-10-07T20:36:28 IST" finished-at="2019-10-07T20:36:28 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.Registration_Verification_ResellerToCPC()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="Registration_Verification_ResellerToCPC()[pri:14, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="Registration_Verification_ResellerToCPC" duration-ms="164184" started-at="2019-10-07T20:36:28 IST" finished-at="2019-10-07T20:39:12 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Registration_Verification_ResellerToCPC -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="315" started-at="2019-10-07T20:39:12 IST" finished-at="2019-10-07T20:39:12 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.Registration_Verification_ResellerToCPC()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=Registration_Verification_ResellerToCPC status=SUCCESS method=Regression.Registration_Verification_ResellerToCPC()[pri:14, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="1" started-at="2019-10-07T20:39:12 IST" finished-at="2019-10-07T20:39:12 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_License_validation()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="CPC_License_validation()[pri:15, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="CPC_License_validation" duration-ms="106157" started-at="2019-10-07T20:39:12 IST" finished-at="2019-10-07T20:40:58 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CPC_License_validation -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="274" started-at="2019-10-07T20:40:58 IST" finished-at="2019-10-07T20:40:59 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_License_validation()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=CPC_License_validation status=SUCCESS method=Regression.CPC_License_validation()[pri:15, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="0" started-at="2019-10-07T20:40:59 IST" finished-at="2019-10-07T20:40:59 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.ResellerApproval_CPC_processedAccess_Granted_Learning()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="ResellerApproval_CPC_processedAccess_Granted_Learning()[pri:16, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="ResellerApproval_CPC_processedAccess_Granted_Learning" duration-ms="133435" started-at="2019-10-07T20:40:59 IST" finished-at="2019-10-07T20:43:12 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ResellerApproval_CPC_processedAccess_Granted_Learning -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="330" started-at="2019-10-07T20:43:12 IST" finished-at="2019-10-07T20:43:12 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.ResellerApproval_CPC_processedAccess_Granted_Learning()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=ResellerApproval_CPC_processedAccess_Granted_Learning status=SUCCESS method=Regression.ResellerApproval_CPC_processedAccess_Granted_Learning()[pri:16, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="1" started-at="2019-10-07T20:43:12 IST" finished-at="2019-10-07T20:43:12 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.Reseller_sessionmapping()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="Reseller_sessionmapping()[pri:17, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="Reseller_sessionmapping" duration-ms="370729" started-at="2019-10-07T20:43:12 IST" finished-at="2019-10-07T20:49:23 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Reseller_sessionmapping -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="267" started-at="2019-10-07T20:49:23 IST" finished-at="2019-10-07T20:49:23 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.Reseller_sessionmapping()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=Reseller_sessionmapping status=SUCCESS method=Regression.Reseller_sessionmapping()[pri:17, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="0" started-at="2019-10-07T20:49:23 IST" finished-at="2019-10-07T20:49:23 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.Reseller_sessionmapping_FutureExpectedDate()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="Reseller_sessionmapping_FutureExpectedDate()[pri:18, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="Reseller_sessionmapping_FutureExpectedDate" duration-ms="268202" started-at="2019-10-07T20:49:23 IST" finished-at="2019-10-07T20:53:52 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Reseller_sessionmapping_FutureExpectedDate -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="280" started-at="2019-10-07T20:53:52 IST" finished-at="2019-10-07T20:53:52 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.Reseller_sessionmapping_FutureExpectedDate()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=Reseller_sessionmapping_FutureExpectedDate status=SUCCESS method=Regression.Reseller_sessionmapping_FutureExpectedDate()[pri:18, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="CPC_PublicWebsite_Registration_purchaseorder()[pri:19, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="CPC_PublicWebsite_Registration_purchaseorder" duration-ms="286385" started-at="2019-10-07T20:53:52 IST" finished-at="2019-10-07T20:58:38 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CPC_PublicWebsite_Registration_purchaseorder -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="0" started-at="2019-10-07T20:53:52 IST" finished-at="2019-10-07T20:53:52 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_PublicWebsite_Registration_purchaseorder() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="270" started-at="2019-10-07T20:58:38 IST" finished-at="2019-10-07T20:58:38 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_PublicWebsite_Registration_purchaseorder() throws java.lang.Exception]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=CPC_PublicWebsite_Registration_purchaseorder status=SUCCESS method=Regression.CPC_PublicWebsite_Registration_purchaseorder()[pri:19, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="0" started-at="2019-10-07T20:58:38 IST" finished-at="2019-10-07T20:58:38 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_PublicWebsite_Registration_Check() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="CPC_PublicWebsite_Registration_Check()[pri:20, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="CPC_PublicWebsite_Registration_Check" duration-ms="182173" started-at="2019-10-07T20:58:38 IST" finished-at="2019-10-07T21:01:41 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CPC_PublicWebsite_Registration_Check -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="287" started-at="2019-10-07T21:01:41 IST" finished-at="2019-10-07T21:01:41 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_PublicWebsite_Registration_Check() throws java.lang.Exception]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=CPC_PublicWebsite_Registration_Check status=SUCCESS method=Regression.CPC_PublicWebsite_Registration_Check()[pri:20, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="startReporting(java.lang.reflect.Method)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="startReporting" is-config="true" duration-ms="0" started-at="2019-10-07T21:01:41 IST" finished-at="2019-10-07T21:01:41 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_PublicWebsite_Registration_License() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReporting -->
+        <test-method status="PASS" signature="CPC_PublicWebsite_Registration_License()[pri:21, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="CPC_PublicWebsite_Registration_License" duration-ms="331966" started-at="2019-10-07T21:01:41 IST" finished-at="2019-10-07T21:07:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CPC_PublicWebsite_Registration_License -->
+        <test-method status="PASS" signature="testResult(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="testResult" is-config="true" duration-ms="303" started-at="2019-10-07T21:07:13 IST" finished-at="2019-10-07T21:07:13 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.svam.twentyeighty.tests.Regression.CPC_PublicWebsite_Registration_License() throws java.lang.Exception]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=CPC_PublicWebsite_Registration_License status=SUCCESS method=Regression.CPC_PublicWebsite_Registration_License()[pri:21, instance:com.svam.twentyeighty.tests.Regression@528931cf] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+        <test-method status="PASS" signature="generateResult()[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="generateResult" is-config="true" duration-ms="523" started-at="2019-10-07T21:07:13 IST" finished-at="2019-10-07T21:07:14 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateResult -->
-        <test-method status="PASS" signature="suiteTearDown()[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="suiteTearDown" is-config="true" duration-ms="5" started-at="2019-10-01T20:50:10 IST" finished-at="2019-10-01T20:50:10 IST">
+        <test-method status="PASS" signature="suiteTearDown()[pri:0, instance:com.svam.twentyeighty.tests.Regression@528931cf]" name="suiteTearDown" is-config="true" duration-ms="9" started-at="2019-10-07T21:07:14 IST" finished-at="2019-10-07T21:07:14 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suiteTearDown -->
       </class> <!-- com.svam.twentyeighty.tests.Regression -->
       <class name="com.svam.driver.TestDriver">
-        <test-method status="PASS" signature="suiteSetup()[pri:0, instance:com.svam.driver.TestDriver@5faeada1]" name="suiteSetup" is-config="true" duration-ms="13243" started-at="2019-10-01T20:42:49 IST" finished-at="2019-10-01T20:43:02 IST">
+        <test-method status="PASS" signature="suiteSetup()[pri:0, instance:com.svam.driver.TestDriver@5faeada1]" name="suiteSetup" is-config="true" duration-ms="3887" started-at="2019-10-07T20:06:28 IST" finished-at="2019-10-07T20:06:32 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suiteSetup -->
-        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.svam.driver.TestDriver@5faeada1]" name="testTearDown" is-config="true" duration-ms="249" started-at="2019-10-01T20:50:10 IST" finished-at="2019-10-01T20:50:10 IST">
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.svam.driver.TestDriver@5faeada1]" name="testTearDown" is-config="true" duration-ms="219" started-at="2019-10-07T21:07:14 IST" finished-at="2019-10-07T21:07:14 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTearDown -->

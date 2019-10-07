@@ -697,7 +697,7 @@ public class SMILCPC extends AbstractPage {
 				if (UIUtils.isObjectExist(driver,
 						TestDriver.getInstance().getObjRep().getLocator(SCREENNAME, "result_Edit")))
 
-					UIUtils.scrollWindow(driver, "Down");
+				UIUtils.scrollWindow(driver, "Down");
 				UIUtils.scrollWindow(driver, "Down");
 				UIUtils.scrollWindow(driver, "Down");
 				UIUtils.scrollWindow(driver, "Down");
@@ -710,28 +710,20 @@ public class SMILCPC extends AbstractPage {
 				Select statusList = new Select(
 						driver.findElement(TestDriver.getInstance().getObjRep().getLocator(SCREENNAME, "editStatus")));
 				List<WebElement> webelement = statusList.getOptions();
-
-				int length = webelement.size();
 				for (WebElement web : webelement) {
-
-					// System.out.println("The Value of first status is "+web.getText());
-					for (int i = 0; i < length; i++) {
 						if (web.getText().contains("Pending") || web.getText().contains("Deleted")
 								|| web.getText().contains("Awaiting Access")
 								|| web.getText().contains("Processed/Access Granted")) {
 							boolean serachCPCResult = true;
 							UIUtils.attachScreenShot(ExtentManager.extentTest,
-									"The searched registration is not editable", serachCPCResult);
-							System.out.println("The Registration Status process is correct");
+									"The Status contains all required options", serachCPCResult);
 							return true;
 						} else {
 							boolean serachCPCResult = false;
 							UIUtils.attachScreenShot(ExtentManager.extentTest,
-									"The searched registration is not editable", serachCPCResult);
+									"The Status doesn't contain all required options", serachCPCResult);
 							return false;
 						}
-					}
-
 				}
 			}
 
