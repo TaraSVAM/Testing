@@ -1,249 +1,148 @@
-2019-10-07 20:06:28 INFO  ObjectRepository:21 - ======Started populating element collection map======
-2019-10-07 20:06:28 INFO  ObjectRepository:44 - ======Time taken to populate object repository in millis is 50======
-2019-10-07 20:06:28 INFO  ObjectRepository:46 - ======Number of object in Object Map is 443======
-2019-10-07 20:06:32 INFO  Regression:77 - ------------Running Test Case 1-------------
-2019-10-07 20:07:05 INFO  AbstractPage:46 - Login into SMIL Application
-2019-10-07 20:07:10 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 20:07:13 INFO  SMILCPC:69 - Searching by Card ID----13478
-2019-10-07 20:07:15 INFO  SMILCPC:366 - Clicking the Edit icon of serached result
-2019-10-07 20:07:17 INFO  AbstractPage:23 - verifing the presence of editIntacctID in SMIL_ProcessingCenter page..
-2019-10-07 20:07:17 INFO  SMILCPC:910 - Intacct ID verification Process-------
-2019-10-07 20:07:17 INFO  SMILCPC:832 - Entering the Intacct ID 3839829
-2019-10-07 20:07:24 INFO  Regression:133 - ------------Running Test Case 2-------------
-2019-10-07 20:08:25 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 20:08:28 INFO  SMILCPC:69 - Searching by Card ID----13478
-2019-10-07 20:08:30 INFO  SMILCPC:366 - Clicking the Edit icon of serached result
-2019-10-07 20:08:32 INFO  AbstractPage:23 - verifing the presence of editIntacctID in SMIL_ProcessingCenter page..
-2019-10-07 20:08:32 INFO  SMILCPC:910 - Intacct ID verification Process-------
-2019-10-07 20:08:32 INFO  SMILCPC:832 - Entering the Intacct ID 3839829
-2019-10-07 20:08:38 INFO  SMILCPC:910 - Intacct ID verification Process-------
-2019-10-07 20:08:38 INFO  SMILCPC:832 - Entering the Intacct ID 123
-2019-10-07 20:09:44 INFO  SMILCPC:910 - Intacct ID verification Process-------
-2019-10-07 20:09:44 INFO  SMILCPC:832 - Entering the Intacct ID  
-2019-10-07 20:09:50 INFO  Regression:197 - ------------Running Test Case 3-------------
-2019-10-07 20:10:52 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 20:10:54 INFO  SMILCPC:69 - Searching by Card ID----13478
-2019-10-07 20:10:56 INFO  SMILCPC:366 - Clicking the Edit icon of serached result
-2019-10-07 20:10:58 INFO  AbstractPage:23 - verifing the presence of editIntacctID in SMIL_ProcessingCenter page..
-2019-10-07 20:10:58 INFO  SMILCPC:832 - Entering the Intacct ID 3839
-2019-10-07 20:10:59 INFO  SMILCPC:793 - Clicking the Save button
-2019-10-07 20:11:08 INFO  SMILCPC:983 - Intacct ID Validation Process-------
-2019-10-07 20:11:08 INFO  AbstractPage:23 - verifing the presence of IntacctID_Error in SMIL_ProcessingCenter page..
-2019-10-07 20:11:08 INFO  AbstractPage:23 - verifing the presence of IntacctIcon in SMIL_ProcessingCenter page..
-2019-10-07 20:11:08 INFO  AbstractPage:23 - verifing the presence of saveButton in SMIL_ProcessingCenter page..
-2019-10-07 20:11:08 INFO  Regression:265 - ------------Running Test Case 4-------------
-2019-10-07 20:12:10 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 20:12:13 INFO  SMILCPC:69 - Searching by Card ID----13478
-2019-10-07 20:12:15 INFO  SMILCPC:366 - Clicking the Edit icon of serached result
-2019-10-07 20:12:17 INFO  AbstractPage:23 - verifing the presence of editIntacctID in SMIL_ProcessingCenter page..
-2019-10-07 20:12:17 INFO  SMILCPC:832 - Entering the Intacct ID 123433356789
-2019-10-07 20:12:18 INFO  SMILCPC:793 - Clicking the Save button
-2019-10-07 20:12:26 INFO  SMILCPC:983 - Intacct ID Validation Process-------
-2019-10-07 20:12:26 INFO  AbstractPage:23 - verifing the presence of IntacctID_Error in SMIL_ProcessingCenter page..
-2019-10-07 20:12:26 INFO  AbstractPage:23 - verifing the presence of IntacctIcon in SMIL_ProcessingCenter page..
-2019-10-07 20:12:26 INFO  AbstractPage:23 - verifing the presence of saveButton in SMIL_ProcessingCenter page..
-2019-10-07 20:12:27 INFO  SMILCPC:832 - Entering the Intacct ID 321
-2019-10-07 20:12:28 INFO  SMILCPC:793 - Clicking the Save button
-2019-10-07 20:12:36 INFO  SMILCPC:983 - Intacct ID Validation Process-------
-2019-10-07 20:12:36 INFO  AbstractPage:23 - verifing the presence of IntacctID_Error in SMIL_ProcessingCenter page..
-2019-10-07 20:12:36 INFO  AbstractPage:23 - verifing the presence of IntacctIcon in SMIL_ProcessingCenter page..
-2019-10-07 20:12:36 INFO  AbstractPage:23 - verifing the presence of saveButton in SMIL_ProcessingCenter page..
-2019-10-07 20:12:36 INFO  SMILCPC:832 - Entering the Intacct ID 12@#3
-2019-10-07 20:12:37 INFO  SMILCPC:793 - Clicking the Save button
-2019-10-07 20:12:46 INFO  SMILCPC:983 - Intacct ID Validation Process-------
-2019-10-07 20:12:46 INFO  AbstractPage:23 - verifing the presence of IntacctID_Error in SMIL_ProcessingCenter page..
-2019-10-07 20:12:46 INFO  AbstractPage:23 - verifing the presence of IntacctIcon in SMIL_ProcessingCenter page..
-2019-10-07 20:12:46 INFO  AbstractPage:23 - verifing the presence of saveButton in SMIL_ProcessingCenter page..
-2019-10-07 20:12:46 INFO  SMILCPC:832 - Entering the Intacct ID 1$?42
-2019-10-07 20:12:47 INFO  SMILCPC:793 - Clicking the Save button
-2019-10-07 20:12:56 INFO  SMILCPC:983 - Intacct ID Validation Process-------
-2019-10-07 20:12:56 INFO  AbstractPage:23 - verifing the presence of IntacctID_Error in SMIL_ProcessingCenter page..
-2019-10-07 20:12:56 INFO  AbstractPage:23 - verifing the presence of IntacctIcon in SMIL_ProcessingCenter page..
-2019-10-07 20:12:56 INFO  AbstractPage:23 - verifing the presence of saveButton in SMIL_ProcessingCenter page..
-2019-10-07 20:12:56 INFO  SMILCPC:832 - Entering the Intacct ID Test
-2019-10-07 20:12:57 INFO  SMILCPC:793 - Clicking the Save button
-2019-10-07 20:13:05 INFO  SMILCPC:983 - Intacct ID Validation Process-------
-2019-10-07 20:13:05 INFO  AbstractPage:23 - verifing the presence of IntacctID_Error in SMIL_ProcessingCenter page..
-2019-10-07 20:13:05 INFO  AbstractPage:23 - verifing the presence of IntacctIcon in SMIL_ProcessingCenter page..
-2019-10-07 20:13:05 INFO  AbstractPage:23 - verifing the presence of saveButton in SMIL_ProcessingCenter page..
-2019-10-07 20:13:06 INFO  SMILCPC:832 - Entering the Intacct ID  
-2019-10-07 20:13:07 INFO  SMILCPC:793 - Clicking the Save button
-2019-10-07 20:13:15 INFO  SMILCPC:983 - Intacct ID Validation Process-------
-2019-10-07 20:13:15 INFO  AbstractPage:23 - verifing the presence of IntacctID_Error in SMIL_ProcessingCenter page..
-2019-10-07 20:13:15 INFO  AbstractPage:23 - verifing the presence of IntacctIcon in SMIL_ProcessingCenter page..
-2019-10-07 20:13:15 INFO  AbstractPage:23 - verifing the presence of saveButton in SMIL_ProcessingCenter page..
-2019-10-07 20:13:16 INFO  Regression:369 - ------------Running Test Case 5-------------
-2019-10-07 20:14:18 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 20:14:20 INFO  SMILCPC:69 - Searching by Card ID----13478
-2019-10-07 20:14:22 INFO  SMILCPC:366 - Clicking the Edit icon of serached result
-2019-10-07 20:14:24 INFO  AbstractPage:23 - verifing the presence of editIntacctID in SMIL_ProcessingCenter page..
-2019-10-07 20:14:24 INFO  SMILCPC:832 - Entering the Intacct ID  
-2019-10-07 20:14:25 INFO  SMILCPC:793 - Clicking the Save button
-2019-10-07 20:14:34 INFO  SMILCPC:983 - Intacct ID Validation Process-------
-2019-10-07 20:14:34 INFO  AbstractPage:23 - verifing the presence of IntacctID_Error in SMIL_ProcessingCenter page..
-2019-10-07 20:14:34 INFO  AbstractPage:23 - verifing the presence of IntacctIcon in SMIL_ProcessingCenter page..
-2019-10-07 20:14:34 INFO  AbstractPage:23 - verifing the presence of saveButton in SMIL_ProcessingCenter page..
-2019-10-07 20:14:34 INFO  Regression:429 - ------------Running Test Case 6-------------
-2019-10-07 20:15:36 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 20:15:38 INFO  SMILCPC:69 - Searching by Card ID----13478
-2019-10-07 20:15:40 INFO  SMILCPC:366 - Clicking the Edit icon of serached result
-2019-10-07 20:15:42 INFO  SMILCPC:870 - Entering the Expected Date
-2019-10-07 20:15:43 INFO  SMILCPC:793 - Clicking the Save button
-2019-10-07 20:15:55 INFO  Regression:481 - The Legacy ID Before-------ADX-GTW/B20191016A
-2019-10-07 20:15:55 INFO  Regression:482 - The List Price Before-------1995.00
-2019-10-07 20:15:55 INFO  Regression:483 - The Legacy ID After-------ADX-GTW/B20191016A
-2019-10-07 20:15:55 INFO  Regression:484 - The List Price After-------1995.00
-2019-10-07 20:15:55 INFO  Regression:514 - ------------Running Test Case 7-------------
-2019-10-07 20:17:59 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 20:18:02 INFO  SMILCPC:69 - Searching by Card ID----13478
-2019-10-07 20:18:04 INFO  SMILCPC:366 - Clicking the Edit icon of serached result
-2019-10-07 20:18:05 INFO  SMILCPC:870 - Entering the Expected Date
-2019-10-07 20:18:07 INFO  SMILCPC:793 - Clicking the Save button
-2019-10-07 20:18:18 INFO  Regression:559 - The Legacy ID After-------ADX-GTW/B20191016A
-2019-10-07 20:18:18 INFO  Regression:589 - ------------Running Test Case 8-------------
-2019-10-07 20:20:22 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 20:20:24 INFO  SMILCPC:69 - Searching by Card ID----13478
-2019-10-07 20:20:26 INFO  SMILCPC:366 - Clicking the Edit icon of serached result
-2019-10-07 20:20:33 INFO  Regression:689 - ------------Running Test Case 9-------------
-2019-10-07 20:21:36 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 20:21:38 INFO  SMILCPC:126 - Advance Searching Process-------
-2019-10-07 20:21:38 INFO  SMILCPC:236 - Filling status---
-2019-10-07 20:22:08 INFO  SMILCPC:660 - Verifying the Status---Processed/Access Granted
-2019-10-07 20:23:09 INFO  Regression:739 - ------------Running Test Case 10-------------
-2019-10-07 20:24:11 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 20:24:40 INFO  SMILCPC:126 - Advance Searching Process-------
-2019-10-07 20:24:40 INFO  SMILCPC:153 - Filling status
-2019-10-07 20:24:48 INFO  SMILCPC:660 - Verifying the Status---Deleted
-2019-10-07 20:25:49 INFO  Regression:781 - ------------Running Test Case 11-------------
-2019-10-07 20:26:50 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 20:27:00 INFO  SMILCPC:126 - Advance Searching Process-------
-2019-10-07 20:27:00 INFO  SMILCPC:153 - Filling status
-2019-10-07 20:27:02 INFO  SMILCPC:660 - Verifying the Status---Pending
-2019-10-07 20:27:04 INFO  Regression:823 - ------------Running Test Case 12-------------
-2019-10-07 20:29:06 INFO  AbstractPage:46 - Login into SMIL Application
-2019-10-07 20:29:08 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 20:29:11 INFO  SMILCPC:126 - Advance Searching Process-------
-2019-10-07 20:29:11 INFO  SMILCPC:153 - Filling status
-2019-10-07 20:29:13 INFO  SMILCPC:660 - Verifying the Status---Awaiting Access
-2019-10-07 20:29:16 INFO  Regression:873 - ------------Running Test Case 13-------------
-2019-10-07 20:30:18 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 20:30:20 INFO  SMILCPC:126 - Advance Searching Process-------
-2019-10-07 20:30:20 INFO  SMILCPC:153 - Filling status
-2019-10-07 20:30:22 INFO  SMILCPC:660 - Verifying the Status---Awaiting Access
-2019-10-07 20:30:25 INFO  SMILCPC:890 - Entering the Notes
-2019-10-07 20:31:26 INFO  SMILCPC:793 - Clicking the Save button
-2019-10-07 20:31:36 INFO  SMILCPC:812 - Clicking the Edit/Cancel button
-2019-10-07 20:31:38 INFO  SMILCPC:890 - Entering the Notes
-2019-10-07 20:32:39 INFO  SMILCPC:851 - Selecting the Status
-2019-10-07 20:32:39 INFO  SMILCPC:793 - Clicking the Save button
-2019-10-07 20:32:50 INFO  Regression:946 - ------------Running Test Case 14-------------
-2019-10-07 20:33:52 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 20:33:54 INFO  SMILCPC:126 - Advance Searching Process-------
-2019-10-07 20:33:54 INFO  SMILCPC:133 - Filling Name
-2019-10-07 20:33:55 INFO  SMILCPC:153 - Filling status
-2019-10-07 20:33:57 INFO  SMILCPC:660 - Verifying the Status---Awaiting Access
-2019-10-07 20:33:59 INFO  SMILCPC:890 - Entering the Notes
-2019-10-07 20:35:00 INFO  SMILCPC:793 - Clicking the Save button
-2019-10-07 20:35:12 INFO  SMILCPC:812 - Clicking the Edit/Cancel button
-2019-10-07 20:35:14 INFO  SMILCPC:890 - Entering the Notes
-2019-10-07 20:36:15 INFO  SMILCPC:851 - Selecting the Status
-2019-10-07 20:36:16 INFO  SMILCPC:793 - Clicking the Save button
-2019-10-07 20:36:28 INFO  Regression:1018 - ------------Running Test Case 15-------------
-2019-10-07 20:37:39 INFO  AbstractPage:48 - Login into Reseller
-2019-10-07 20:37:40 INFO  AbstractPage:23 - verifing the presence of Home in Reseller page..
-2019-10-07 20:37:40 INFO  AbstractPage:23 - verifing the presence of Home in Reseller page..
-2019-10-07 20:37:40 INFO  AbstractPage:110 - Course is selecting in Reseller
-2019-10-07 20:37:43 INFO  AbstractPage:1033 - Student Registration Process through Reseller
-2019-10-07 20:37:47 INFO  AbstractPage:23 - verifing the presence of NewRecord in Reseller page..
-2019-10-07 20:37:47 INFO  AbstractPage:1058 - Creating new Student Registration
-2019-10-07 20:37:47 INFO  AbstractPage:23 - verifing the presence of NewRecord in Reseller page..
-2019-10-07 20:38:03 INFO  AbstractPage:23 - verifing the presence of CompleteRegistration in Reseller page..
-2019-10-07 20:39:08 INFO  Common:55 - Clicking to RESELLERAPPROVALS Menu........
-2019-10-07 20:39:10 INFO  AbstractPage:37 - Searching the Reseller Registration
-2019-10-07 20:39:12 INFO  Regression:1079 - ------------Running Test Case 16-------------
-2019-10-07 20:40:14 INFO  Common:55 - Clicking to RESELLERAPPROVALS Menu........
-2019-10-07 20:40:16 INFO  AbstractPage:37 - Searching the Reseller Registration
-2019-10-07 20:40:18 INFO  AbstractPage:72 - Clicking the Edit Icon of email ID---TSB_9076@mailinator.com
-2019-10-07 20:40:20 INFO  AbstractPage:148 - Entering the Save button
-2019-10-07 20:40:21 INFO  AbstractPage:108 - Clicking the Save button
-2019-10-07 20:40:30 INFO  AbstractPage:148 - Entering the Save button
-2019-10-07 20:40:31 INFO  AbstractPage:108 - Clicking the Save button
-2019-10-07 20:40:39 INFO  AbstractPage:148 - Entering the Save button
-2019-10-07 20:40:40 INFO  AbstractPage:108 - Clicking the Save button
-2019-10-07 20:40:49 INFO  AbstractPage:148 - Entering the Save button
-2019-10-07 20:40:50 INFO  AbstractPage:108 - Clicking the Save button
-2019-10-07 20:40:59 INFO  Regression:1190 - ------------Running Test Case 17-------------
-2019-10-07 20:40:59 INFO  AbstractPage:48 - Login into Reseller
-2019-10-07 20:41:00 INFO  AbstractPage:23 - verifing the presence of Home in Reseller page..
-2019-10-07 20:41:00 INFO  AbstractPage:23 - verifing the presence of Home in Reseller page..
-2019-10-07 20:41:00 INFO  AbstractPage:110 - Course is selecting in Reseller
-2019-10-07 20:41:03 INFO  AbstractPage:1033 - Student Registration Process through Reseller
-2019-10-07 20:41:06 INFO  AbstractPage:23 - verifing the presence of NewRecord in Reseller page..
-2019-10-07 20:41:06 INFO  AbstractPage:1058 - Creating new Student Registration
-2019-10-07 20:41:06 INFO  AbstractPage:23 - verifing the presence of NewRecord in Reseller page..
-2019-10-07 20:41:23 INFO  AbstractPage:23 - verifing the presence of CompleteRegistration in Reseller page..
-2019-10-07 20:42:26 INFO  Common:55 - Clicking to RESELLERAPPROVALS Menu........
-2019-10-07 20:42:29 INFO  AbstractPage:37 - Searching the Reseller Registration
-2019-10-07 20:42:30 INFO  AbstractPage:72 - Clicking the Edit Icon of email ID---TSB_959@mailinator.com
-2019-10-07 20:42:32 INFO  AbstractPage:128 - Clicking the Approve button
-2019-10-07 20:42:41 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 20:42:43 INFO  SMILCPC:126 - Advance Searching Process-------
-2019-10-07 20:42:43 INFO  SMILCPC:221 - Filling emailID
-2019-10-07 20:42:47 INFO  SMILCPC:366 - Clicking the Edit icon of serached result
-2019-10-07 20:42:49 INFO  SMILCPC:832 - Entering the Intacct ID 123123
-2019-10-07 20:42:50 INFO  SMILCPC:851 - Selecting the Status
-2019-10-07 20:42:50 INFO  SMILCPC:793 - Clicking the Save button
-2019-10-07 20:43:12 INFO  Regression:1278 - ------------Running Test Case 18-------------
-2019-10-07 20:43:13 INFO  AbstractPage:48 - Login into Reseller
-2019-10-07 20:43:13 INFO  AbstractPage:23 - verifing the presence of Home in Reseller page..
-2019-10-07 20:43:13 INFO  AbstractPage:23 - verifing the presence of Home in Reseller page..
-2019-10-07 20:43:13 INFO  AbstractPage:110 - Course is selecting in Reseller
-2019-10-07 20:43:16 INFO  AbstractPage:1033 - Student Registration Process through Reseller
-2019-10-07 20:43:20 INFO  AbstractPage:23 - verifing the presence of NewRecord in Reseller page..
-2019-10-07 20:44:20 INFO  AbstractPage:23 - verifing the presence of CompleteRegistration in Reseller page..
-2019-10-07 20:45:20 INFO  AbstractPage:23 - verifing the presence of AlreadyRegistered in Reseller page..
-2019-10-07 20:45:20 INFO  AbstractPage:23 - verifing the presence of AlreadyRegistered in Reseller page..
-2019-10-07 20:48:22 INFO  Common:55 - Clicking to RESELLERAPPROVALS Menu........
-2019-10-07 20:49:23 INFO  Regression:1366 - ------------Running Test Case 19-------------
-2019-10-07 20:49:24 INFO  AbstractPage:48 - Login into Reseller
-2019-10-07 20:49:24 INFO  AbstractPage:23 - verifing the presence of Home in Reseller page..
-2019-10-07 20:49:24 INFO  AbstractPage:23 - verifing the presence of Home in Reseller page..
-2019-10-07 20:49:25 INFO  AbstractPage:110 - Course is selecting in Reseller
-2019-10-07 20:49:27 INFO  AbstractPage:1033 - Student Registration Process through Reseller
-2019-10-07 20:49:31 INFO  AbstractPage:23 - verifing the presence of NewRecord in Reseller page..
-2019-10-07 20:49:31 INFO  AbstractPage:1058 - Creating new Student Registration
-2019-10-07 20:49:31 INFO  AbstractPage:23 - verifing the presence of NewRecord in Reseller page..
-2019-10-07 20:49:48 INFO  AbstractPage:23 - verifing the presence of CompleteRegistration in Reseller page..
-2019-10-07 20:52:50 INFO  Common:55 - Clicking to RESELLERAPPROVALS Menu........
-2019-10-07 20:53:52 INFO  Regression:1619 - ------------Running Test Case 20-------------
-2019-10-07 20:54:07 INFO  AbstractPage:77 - Adding Cource to Cart
-2019-10-07 20:54:31 INFO  AbstractPage:92 - Selecting the Course from the Cart
-2019-10-07 20:56:07 INFO  AbstractPage:112 - Clicking the New User button
-2019-10-07 20:56:13 INFO  AbstractPage:250 - ---------------New Registration Process-------------
-2019-10-07 20:56:18 INFO  AbstractPage:274 - Selecting Purchase Order
-2019-10-07 20:57:29 INFO  AbstractPage:46 - Login into SMIL Application
-2019-10-07 20:57:32 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 20:57:34 INFO  SMILCPC:126 - Advance Searching Process-------
-2019-10-07 20:57:34 INFO  SMILCPC:133 - Filling Name
-2019-10-07 20:57:35 INFO  SMILCPC:138 - Filling emailID
-2019-10-07 20:58:38 INFO  Regression:1684 - ------------Running Test Case 21-------------
-2019-10-07 20:58:40 INFO  AbstractPage:77 - Adding Cource to Cart
-2019-10-07 20:59:00 INFO  AbstractPage:92 - Selecting the Course from the Cart
-2019-10-07 20:59:02 INFO  AbstractPage:112 - Clicking the New User button
-2019-10-07 20:59:08 INFO  AbstractPage:250 - ---------------New Registration Process-------------
-2019-10-07 20:59:14 INFO  AbstractPage:293 - Selecting Check
-2019-10-07 21:01:35 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 21:01:37 INFO  SMILCPC:126 - Advance Searching Process-------
-2019-10-07 21:01:37 INFO  SMILCPC:133 - Filling Name
-2019-10-07 21:01:38 INFO  SMILCPC:138 - Filling emailID
-2019-10-07 21:01:41 INFO  Regression:1751 - ------------Running Test Case 22-------------
-2019-10-07 21:01:43 INFO  AbstractPage:77 - Adding Cource to Cart
-2019-10-07 21:02:10 INFO  AbstractPage:92 - Selecting the Course from the Cart
-2019-10-07 21:02:12 INFO  AbstractPage:112 - Clicking the New User button
-2019-10-07 21:02:18 INFO  AbstractPage:250 - ---------------New Registration Process-------------
-2019-10-07 21:02:24 INFO  AbstractPage:307 - Selecting License
-2019-10-07 21:06:07 INFO  Common:55 - Clicking to ProcessingCenter Menu........
-2019-10-07 21:06:10 INFO  SMILCPC:126 - Advance Searching Process-------
-2019-10-07 21:06:10 INFO  SMILCPC:133 - Filling Name
-2019-10-07 21:06:10 INFO  SMILCPC:138 - Filling emailID
-2019-10-07 21:07:14 INFO  TestDriver:361 - All tests get executed
+2019-10-10 18:05:54 INFO  ObjectRepository:21 - ======Started populating element collection map======
+2019-10-10 18:05:54 INFO  ObjectRepository:44 - ======Time taken to populate object repository in millis is 47======
+2019-10-10 18:05:54 INFO  ObjectRepository:46 - ======Number of object in Object Map is 455======
+2019-10-10 18:05:58 INFO  CDSMapping:56 - ------------CDS Course Mapping Process-------------
+2019-10-10 18:06:30 INFO  AbstractPage:46 - Login into SMIL Application
+2019-10-10 18:06:35 INFO  Common:55 - Clicking to Courses Menu........
+2019-10-10 18:06:37 INFO  AbstractPage:299 - Advance serach for all Courses----
+2019-10-10 18:06:43 INFO  AbstractPage:311 - Clicking the Serach Result----
+2019-10-10 18:06:44 INFO  AbstractPage:322 - The Course number 1 is executing----
+2019-10-10 18:07:14 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 18:08:16 INFO  AbstractPage:322 - The Course number 2 is executing----
+2019-10-10 18:08:18 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 18:08:18 INFO  TestDriver:361 - All tests get executed
+2019-10-10 18:11:38 INFO  ObjectRepository:21 - ======Started populating element collection map======
+2019-10-10 18:11:38 INFO  ObjectRepository:44 - ======Time taken to populate object repository in millis is 46======
+2019-10-10 18:11:38 INFO  ObjectRepository:46 - ======Number of object in Object Map is 455======
+2019-10-10 18:11:42 INFO  CDSMapping:56 - ------------CDS Course Mapping Process-------------
+2019-10-10 18:12:14 INFO  AbstractPage:46 - Login into SMIL Application
+2019-10-10 18:12:20 INFO  Common:55 - Clicking to Courses Menu........
+2019-10-10 18:12:22 INFO  AbstractPage:299 - Advance serach for all Courses----
+2019-10-10 18:12:28 INFO  AbstractPage:311 - Clicking the Serach Result----
+2019-10-10 18:12:28 INFO  AbstractPage:322 - The Course number 1 is executing----
+2019-10-10 18:12:58 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 18:13:58 INFO  TestDriver:361 - All tests get executed
+2019-10-10 18:15:09 INFO  ObjectRepository:21 - ======Started populating element collection map======
+2019-10-10 18:15:09 INFO  ObjectRepository:44 - ======Time taken to populate object repository in millis is 43======
+2019-10-10 18:15:09 INFO  ObjectRepository:46 - ======Number of object in Object Map is 455======
+2019-10-10 18:15:13 INFO  CDSMapping:56 - ------------CDS Course Mapping Process-------------
+2019-10-10 18:15:45 INFO  AbstractPage:46 - Login into SMIL Application
+2019-10-10 18:15:49 INFO  Common:55 - Clicking to Courses Menu........
+2019-10-10 18:15:52 INFO  AbstractPage:299 - Advance serach for all Courses----
+2019-10-10 18:15:58 INFO  AbstractPage:311 - Clicking the Serach Result----
+2019-10-10 18:15:58 INFO  AbstractPage:322 - The Course number 1 is executing----
+2019-10-10 18:16:23 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 18:17:23 INFO  TestDriver:361 - All tests get executed
+2019-10-10 18:17:45 INFO  ObjectRepository:21 - ======Started populating element collection map======
+2019-10-10 18:17:45 INFO  ObjectRepository:44 - ======Time taken to populate object repository in millis is 47======
+2019-10-10 18:17:45 INFO  ObjectRepository:46 - ======Number of object in Object Map is 455======
+2019-10-10 18:17:48 INFO  CDSMapping:56 - ------------CDS Course Mapping Process-------------
+2019-10-10 18:18:20 INFO  AbstractPage:46 - Login into SMIL Application
+2019-10-10 18:18:25 INFO  Common:55 - Clicking to Courses Menu........
+2019-10-10 18:18:27 INFO  AbstractPage:299 - Advance serach for all Courses----
+2019-10-10 18:18:33 INFO  AbstractPage:311 - Clicking the Serach Result----
+2019-10-10 18:18:33 INFO  AbstractPage:322 - The Course number 1 is executing----
+2019-10-10 18:18:57 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 18:21:26 INFO  TestDriver:361 - All tests get executed
+2019-10-10 19:04:58 INFO  ObjectRepository:21 - ======Started populating element collection map======
+2019-10-10 19:04:58 INFO  ObjectRepository:44 - ======Time taken to populate object repository in millis is 49======
+2019-10-10 19:04:58 INFO  ObjectRepository:46 - ======Number of object in Object Map is 455======
+2019-10-10 19:05:02 INFO  CDSMapping:56 - ------------CDS Course Mapping Process-------------
+2019-10-10 19:05:34 INFO  AbstractPage:46 - Login into SMIL Application
+2019-10-10 19:05:38 INFO  Common:55 - Clicking to Courses Menu........
+2019-10-10 19:05:41 INFO  AbstractPage:299 - Advance serach for all Courses----
+2019-10-10 19:05:47 INFO  AbstractPage:311 - Clicking the Serach Result----
+2019-10-10 19:05:47 INFO  AbstractPage:322 - The Course number 1 is executing----
+2019-10-10 19:06:12 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:06:14 INFO  AbstractPage:322 - The Course number 2 is executing----
+2019-10-10 19:06:16 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:06:17 INFO  AbstractPage:322 - The Course number 3 is executing----
+2019-10-10 19:06:19 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:06:21 INFO  AbstractPage:322 - The Course number 4 is executing----
+2019-10-10 19:06:23 INFO  AbstractPage:407 - ----Provider is Data Solutions-------
+2019-10-10 19:06:24 INFO  AbstractPage:322 - The Course number 5 is executing----
+2019-10-10 19:06:26 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:06:28 INFO  AbstractPage:322 - The Course number 6 is executing----
+2019-10-10 19:06:30 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:06:31 INFO  AbstractPage:322 - The Course number 7 is executing----
+2019-10-10 19:06:33 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:08:34 INFO  TestDriver:361 - All tests get executed
+2019-10-10 19:13:50 INFO  ObjectRepository:21 - ======Started populating element collection map======
+2019-10-10 19:13:50 INFO  ObjectRepository:44 - ======Time taken to populate object repository in millis is 47======
+2019-10-10 19:13:50 INFO  ObjectRepository:46 - ======Number of object in Object Map is 455======
+2019-10-10 19:13:53 INFO  CDSMapping:56 - ------------CDS Course Mapping Process-------------
+2019-10-10 19:14:25 INFO  AbstractPage:46 - Login into SMIL Application
+2019-10-10 19:14:30 INFO  Common:55 - Clicking to Courses Menu........
+2019-10-10 19:14:32 INFO  AbstractPage:299 - Advance serach for all Courses----
+2019-10-10 19:14:38 INFO  AbstractPage:311 - Clicking the Serach Result----
+2019-10-10 19:14:38 INFO  AbstractPage:322 - The Course number 1 is executing----
+2019-10-10 19:15:03 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:15:04 INFO  AbstractPage:322 - The Course number 2 is executing----
+2019-10-10 19:15:07 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:15:08 INFO  AbstractPage:322 - The Course number 3 is executing----
+2019-10-10 19:15:10 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:15:12 INFO  AbstractPage:322 - The Course number 4 is executing----
+2019-10-10 19:15:14 INFO  AbstractPage:407 - ----Provider is Data Solutions-------
+2019-10-10 19:15:15 INFO  AbstractPage:322 - The Course number 5 is executing----
+2019-10-10 19:15:17 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:15:18 INFO  AbstractPage:322 - The Course number 6 is executing----
+2019-10-10 19:15:20 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:15:22 INFO  AbstractPage:322 - The Course number 7 is executing----
+2019-10-10 19:15:24 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:16:32 INFO  AbstractPage:322 - The Course number 8 is executing----
+2019-10-10 19:16:34 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:16:35 INFO  AbstractPage:322 - The Course number 9 is executing----
+2019-10-10 19:16:37 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:16:39 INFO  AbstractPage:322 - The Course number 10 is executing----
+2019-10-10 19:16:40 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:16:42 INFO  AbstractPage:322 - The Course number 11 is executing----
+2019-10-10 19:16:44 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:16:45 INFO  AbstractPage:322 - The Course number 12 is executing----
+2019-10-10 19:17:12 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:19:05 INFO  AbstractPage:322 - The Course number 13 is executing----
+2019-10-10 19:19:07 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:20:15 INFO  AbstractPage:322 - The Course number 14 is executing----
+2019-10-10 19:20:17 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:20:19 INFO  AbstractPage:322 - The Course number 15 is executing----
+2019-10-10 19:20:21 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:20:22 INFO  AbstractPage:322 - The Course number 16 is executing----
+2019-10-10 19:20:24 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:20:26 INFO  AbstractPage:322 - The Course number 17 is executing----
+2019-10-10 19:20:28 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:20:30 INFO  AbstractPage:322 - The Course number 18 is executing----
+2019-10-10 19:20:31 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:20:33 INFO  AbstractPage:322 - The Course number 19 is executing----
+2019-10-10 19:20:35 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:20:37 INFO  AbstractPage:322 - The Course number 20 is executing----
+2019-10-10 19:20:38 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:20:40 INFO  AbstractPage:322 - The Course number 21 is executing----
+2019-10-10 19:20:42 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:20:44 INFO  AbstractPage:322 - The Course number 22 is executing----
+2019-10-10 19:20:45 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:20:47 INFO  AbstractPage:322 - The Course number 23 is executing----
+2019-10-10 19:20:49 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:20:50 INFO  AbstractPage:322 - The Course number 24 is executing----
+2019-10-10 19:20:52 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:20:54 INFO  AbstractPage:322 - The Course number 25 is executing----
+2019-10-10 19:20:56 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:20:58 INFO  AbstractPage:322 - The Course number 26 is executing----
+2019-10-10 19:21:00 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:21:01 INFO  AbstractPage:322 - The Course number 27 is executing----
+2019-10-10 19:21:03 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:21:05 INFO  AbstractPage:322 - The Course number 28 is executing----
+2019-10-10 19:21:06 INFO  AbstractPage:407 - ----Provider is Data Solutions-------
+2019-10-10 19:21:08 INFO  AbstractPage:322 - The Course number 29 is executing----
+2019-10-10 19:21:10 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:21:11 INFO  AbstractPage:322 - The Course number 30 is executing----
+2019-10-10 19:21:13 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:22:22 INFO  AbstractPage:322 - The Course number 31 is executing----
+2019-10-10 19:22:24 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:22:25 INFO  AbstractPage:322 - The Course number 32 is executing----
+2019-10-10 19:22:27 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:22:29 INFO  AbstractPage:322 - The Course number 33 is executing----
+2019-10-10 19:22:31 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:22:32 INFO  AbstractPage:322 - The Course number 34 is executing----
+2019-10-10 19:22:34 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:22:36 INFO  AbstractPage:322 - The Course number 35 is executing----
+2019-10-10 19:22:38 INFO  AbstractPage:338 - ----Provider is Moodle Sandbox-------
+2019-10-10 19:22:41 INFO  TestDriver:361 - All tests get executed

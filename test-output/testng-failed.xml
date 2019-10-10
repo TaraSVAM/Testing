@@ -3,19 +3,18 @@
 <suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test thread-count="2" name="Test(failed)">
     <classes>
-      <class name="com.svam.twentyeighty.tests.Regression">
+      <class name="com.svam.twentyeighty.tests.CDSMapping">
         <methods>
-          <include name="Notes_CPC_AwaitingAccess"/>
+          <include name="testResult"/>
           <include name="appInitilization"/>
-          <include name="generateResult"/>
-          <include name="CPC_License_validation"/>
           <include name="startReporting"/>
+          <include name="mapping"/>
+          <include name="generateResult"/>
           <include name="suiteSetup"/>
           <include name="suiteTearDown"/>
           <include name="testTearDown"/>
-          <include name="testResult"/>
         </methods>
-      </class> <!-- com.svam.twentyeighty.tests.Regression -->
+      </class> <!-- com.svam.twentyeighty.tests.CDSMapping -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
