@@ -112,6 +112,7 @@ public class Reseller extends AbstractPage {
 
 		for (WebElement webElement : result) {
 			if (webElement.getText().contains(course)) {
+				LOGGER.info("The value of locator---"+webElement.getText());
 				switch (course) {
 
 				// Project Management Core Courses

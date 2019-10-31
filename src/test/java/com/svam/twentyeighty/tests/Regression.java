@@ -74,8 +74,8 @@ public class Regression extends TestDriver {
 
 		try {
 			LOGGER.info("------------Running Test Case 1-------------");
-			String cartID = "13478";
-			String intacctID = "3839829";
+			String cartID = "13544";
+			String intacctID = "3872329";
 			ExtentManager.extentTest.log(LogStatus.INFO, "Step 1. Login into SMIL Application");
 			TestDriver.appInstantiation(Apps.SMIL);
 			if (UIUtils.isObjectExist(driver,
@@ -85,30 +85,55 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
-			} else {
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\" menu");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CartID and verify the serach Result");
+				Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
+				Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 6. Verify whether Intacct ID field is visible in the record");
+				Assert.assertTrue(cpc.fieldExistanceVerification("IntacctID"), "The Presence of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Verify the Intacct Detail");
+				Assert.assertTrue(cpc.intacctIDVerification("Valid", intacctID), "Intacct Detail");
+			} else if(UIUtils.isObjectExist(driver,
+					TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "processingCenter"))) {
 				WebElement results = driver
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
 
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\" menu");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CartID and verify the serach Result");
+				Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
+				Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 6. Verify whether Intacct ID field is visible in the record");
+				Assert.assertTrue(cpc.fieldExistanceVerification("IntacctID"), "The Presence of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Verify the Intacct Detail");
+				Assert.assertTrue(cpc.intacctIDVerification("Valid", intacctID), "Intacct Detail");
 			}
-			UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\" menu");
-			cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CartID and verify the serach Result");
-			Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
-			Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO,
-					"Step 6. Verify whether Intacct ID field is visible in the record");
-			Assert.assertTrue(cpc.fieldExistanceVerification("IntacctID"), "The Presence of Intacct ID");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Verify the Intacct Detail");
-			Assert.assertTrue(cpc.intacctIDVerification("Valid", intacctID), "Intacct Detail");
+			else {
+				LOGGER.info("SIML Application is down");
+				boolean testResult = false;
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "SMIL Application is down",
+						testResult);				
+			}
+						
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -129,43 +154,80 @@ public class Regression extends TestDriver {
 	public void CPC_Intacct_ID_Details_Work() {
 		try {
 			LOGGER.info("------------Running Test Case 2-------------");
-			String cartID = "13478";
-			String intacctID_Valid = "3839829";
+			String cartID = "13544";
+			String intacctID_Valid = "3872329";
 			String intacctID_InValid = "123";
 			String intacctID_Blank = " ";
 			ExtentManager.extentTest.log(LogStatus.INFO, "Step 1. Login into SMIL Application");
 			TestDriver.appInstantiation(Apps.SMIL);
-			UIUtils.waitUntilElementExists(driver,
-					TestDriver.getInstance().getObjRep().getLocator("SMIL_Login", "txtUsername"), 50);
-			sm.login("SinghT", "Welcome@321");
-			WebElement results = driver
-					.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
-			Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+			if (UIUtils.isObjectExist(driver,
+					TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "ProcessingCenter"))) {
+				WebElement results = driver
+						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
+				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
 
-			UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
 
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
-			cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CarID and verify the serach Result");
+				Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
 
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CarID and verify the serach Result");
-			Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
+				Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
 
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
-			Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 6. Verify whether Intacct ID field is visible in the record");
+				Assert.assertTrue(cpc.fieldExistanceVerification("IntacctID"), "The Presence of Intacct ID");
 
-			ExtentManager.extentTest.log(LogStatus.INFO,
-					"Step 6. Verify whether Intacct ID field is visible in the record");
-			Assert.assertTrue(cpc.fieldExistanceVerification("IntacctID"), "The Presence of Intacct ID");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Verify the Intacct Detail");
+				Assert.assertTrue(cpc.intacctIDVerification("Valid", intacctID_Valid), "Intacct Detail");
 
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Verify the Intacct Detail");
-			Assert.assertTrue(cpc.intacctIDVerification("Valid", intacctID_Valid), "Intacct Detail");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Verify the Invalid Intacct ID");
+				Assert.assertTrue(cpc.intacctIDVerification("Invalid", intacctID_InValid), "Intacct Detail");
 
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Verify the Invalid Intacct ID");
-			Assert.assertTrue(cpc.intacctIDVerification("Invalid", intacctID_InValid), "Intacct Detail");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 9. Verify the Blank Intacct ID");
+				Assert.assertTrue(cpc.intacctIDVerification("Blank", intacctID_Blank), "Intacct Detail");
+			} else if (UIUtils.isObjectExist(driver,
+					TestDriver.getInstance().getObjRep().getLocator("SMIL_Login", "txtUsername"))) {
+				sm.login("SinghT", "Welcome@321");
+				WebElement results = driver
+						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
+				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
 
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 9. Verify the Blank Intacct ID");
-			Assert.assertTrue(cpc.intacctIDVerification("Blank", intacctID_Blank), "Intacct Detail");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CarID and verify the serach Result");
+				Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
+				Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 6. Verify whether Intacct ID field is visible in the record");
+				Assert.assertTrue(cpc.fieldExistanceVerification("IntacctID"), "The Presence of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Verify the Intacct Detail");
+				Assert.assertTrue(cpc.intacctIDVerification("Valid", intacctID_Valid), "Intacct Detail");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Verify the Invalid Intacct ID");
+				Assert.assertTrue(cpc.intacctIDVerification("Invalid", intacctID_InValid), "Intacct Detail");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 9. Verify the Blank Intacct ID");
+				Assert.assertTrue(cpc.intacctIDVerification("Blank", intacctID_Blank), "Intacct Detail");
+			}
+			else {
+				LOGGER.info("SIML Application is down");
+				boolean testResult = false;
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "SMIL Application is down",
+						testResult);				
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -186,8 +248,8 @@ public class Regression extends TestDriver {
 	public void verifyIntacctID() {
 		try {
 			LOGGER.info("------------Running Test Case 3-------------");
-			String cartID = "13478";
-			String IntacctId = "3839";
+			String cartID = "13544";
+			String IntacctId = "3872329";
 			ExtentManager.extentTest.log(LogStatus.INFO, "Step 1. Login into SMIL Application");
 			TestDriver.appInstantiation(Apps.SMIL);
 			if (UIUtils.isObjectExist(driver,
@@ -196,6 +258,38 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CarID and verify the serach Result");
+				Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
+				Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 6. Verify whether Intacct ID field is visible in the record");
+				Assert.assertTrue(cpc.fieldExistanceVerification("IntacctID"), "The Presence of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Provide Intacct id less than 5 numbers");
+				Assert.assertTrue(cpc.enterIntacctID(IntacctId), "The validation of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Click the Save Button");
+				Assert.assertTrue(cpc.clickSaveButton(), "The Registration is saved");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 9. Verify the validation of Invalid Intacct IDIntacct id less than 5 numbers");
+				Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+
+//				ExtentManager.extentTest.log(LogStatus.INFO, "Step 10. Click the Save Button");
+//				Assert.assertTrue(cpc.selectStatus("Awaiting Access"), "The Registration is saved");
+//							
+//				ExtentManager.extentTest.log(LogStatus.INFO, "Step 11. Click the Save Button");
+//				Assert.assertTrue(cpc.clickSaveButton(), "The Registration is saved");
+				
 			} else if (UIUtils.isObjectExist(driver,
 					TestDriver.getInstance().getObjRep().getLocator("SMIL_Login", "txtUsername"))) {
 				sm.login("SinghT", "Welcome@321");
@@ -203,39 +297,44 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CarID and verify the serach Result");
+				Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
+				Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 6. Verify whether Intacct ID field is visible in the record");
+				Assert.assertTrue(cpc.fieldExistanceVerification("IntacctID"), "The Presence of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Provide Intacct id less than 5 numbers");
+				Assert.assertTrue(cpc.enterIntacctID(IntacctId), "The validation of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Click the Save Button");
+				Assert.assertTrue(cpc.clickSaveButton(), "The Registration is saved");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 9. Verify the validation of Invalid Intacct IDIntacct id less than 5 numbers");
+				Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+
+//				ExtentManager.extentTest.log(LogStatus.INFO, "Step 10. Click the Save Button");
+//				Assert.assertTrue(cpc.selectStatus("Awaiting Access"), "The Registration is saved");
+//							
+//				ExtentManager.extentTest.log(LogStatus.INFO, "Step 11. Click the Save Button");
+//				Assert.assertTrue(cpc.clickSaveButton(), "The Registration is saved");
 			}
-
-			UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
-			cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CarID and verify the serach Result");
-			Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
-			Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO,
-					"Step 6. Verify whether Intacct ID field is visible in the record");
-			Assert.assertTrue(cpc.fieldExistanceVerification("IntacctID"), "The Presence of Intacct ID");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Provide Intacct id less than 5 numbers");
-			Assert.assertTrue(cpc.enterIntacctID(IntacctId), "The validation of Intacct ID");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Click the Save Button");
-			Assert.assertTrue(cpc.clickSaveButton(), "The Registration is saved");
-
-			ExtentManager.extentTest.log(LogStatus.INFO,
-					"Step 9. Verify the validation of Invalid Intacct IDIntacct id less than 5 numbers");
-			Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
-
-//			ExtentManager.extentTest.log(LogStatus.INFO, "Step 10. Click the Save Button");
-//			Assert.assertTrue(cpc.selectStatus("Awaiting Access"), "The Registration is saved");
-//						
-//			ExtentManager.extentTest.log(LogStatus.INFO, "Step 11. Click the Save Button");
-//			Assert.assertTrue(cpc.clickSaveButton(), "The Registration is saved");
-
+			else {
+				LOGGER.info("SIML Application is down");
+				boolean testResult = false;
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "SMIL Application is down",
+						testResult);				
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			boolean testResult = false;
@@ -255,7 +354,7 @@ public class Regression extends TestDriver {
 	public void CPC_Dummy_Intacct_ID_Save_Record() {
 		try {
 			LOGGER.info("------------Running Test Case 4-------------");
-			String cartID = "13478";
+			String cartID = "13544";
 			String IntacctID_LessThan5 = "321";
 			String IntacctID_GreaterThan5 = "123433356789";
 			String IntactID_Special = "12@#3";
@@ -270,6 +369,68 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CarID and verify the serach Result");
+				Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
+				Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 6. Verify whether Intacct ID field is visible in the record");
+				Assert.assertTrue(cpc.fieldExistanceVerification("IntacctID"), "The Presence of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Provide a dummy Intacct ID (minimum 5 numbers)");
+				Assert.assertTrue(cpc.enterIntacctID(IntacctID_GreaterThan5), "The validation of Intacct ID");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Click the Save Button");
+				cpc.clickSaveButton();
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 9. Verify the validation of dummy Intacct ID (minimum 5 numbers)");
+				Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 10. Provide Intacct id less than 5 numbers");
+				Assert.assertTrue(cpc.enterIntacctID(IntacctID_LessThan5), "The validation of Intacct ID");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 11. Click the Save Button");
+				cpc.clickSaveButton();
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 12. Verify the validation of Invalid Intacct IDIntacct id less than 5 numbers");
+				Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 13. Provide Intacct id as Special characters(_,!@#$%^&*)");
+				Assert.assertTrue(cpc.enterIntacctID(IntactID_Special), "The validation of Intacct ID");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 14. Click the Save Button");
+				cpc.clickSaveButton();
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 15. Verify the validation of Intacct id as Special characters(_,!@#$%^&*)");
+				Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 16. Provide Intacct ID as symbols");
+				Assert.assertTrue(cpc.enterIntacctID(IntacctID_symbols), "The validation of Intacct ID");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 17. Click the Save Button");
+				cpc.clickSaveButton();
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 18. Verify the validation of Intacct ID as symbols");
+				Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 19. Provide Intacct ID as alphabets");
+				Assert.assertTrue(cpc.enterIntacctID(IntacctID_alphabets), "The validation of Intacct ID");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 20. Click the Save Button");
+				cpc.clickSaveButton();
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 21. Verify the validation of Intacct ID as alphabetss");
+				Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 22. Enter blanck Intacct ID");
+				Assert.assertTrue(cpc.enterIntacctID(" "), "The validation of Intacct ID");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 23. Click the Save Button");
+				cpc.clickSaveButton();
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 24. Verify the validation of Intacct ID");
+				Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+
 			} else if (UIUtils.isObjectExist(driver,
 					TestDriver.getInstance().getObjRep().getLocator("SMIL_Login", "txtUsername"))) {
 				sm.login("SinghT", "Welcome@321");
@@ -277,68 +438,75 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CarID and verify the serach Result");
+				Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
+				Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 6. Verify whether Intacct ID field is visible in the record");
+				Assert.assertTrue(cpc.fieldExistanceVerification("IntacctID"), "The Presence of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Provide a dummy Intacct ID (minimum 5 numbers)");
+				Assert.assertTrue(cpc.enterIntacctID(IntacctID_GreaterThan5), "The validation of Intacct ID");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Click the Save Button");
+				cpc.clickSaveButton();
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 9. Verify the validation of dummy Intacct ID (minimum 5 numbers)");
+				Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 10. Provide Intacct id less than 5 numbers");
+				Assert.assertTrue(cpc.enterIntacctID(IntacctID_LessThan5), "The validation of Intacct ID");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 11. Click the Save Button");
+				cpc.clickSaveButton();
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 12. Verify the validation of Invalid Intacct IDIntacct id less than 5 numbers");
+				Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 13. Provide Intacct id as Special characters(_,!@#$%^&*)");
+				Assert.assertTrue(cpc.enterIntacctID(IntactID_Special), "The validation of Intacct ID");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 14. Click the Save Button");
+				cpc.clickSaveButton();
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 15. Verify the validation of Intacct id as Special characters(_,!@#$%^&*)");
+				Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 16. Provide Intacct ID as symbols");
+				Assert.assertTrue(cpc.enterIntacctID(IntacctID_symbols), "The validation of Intacct ID");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 17. Click the Save Button");
+				cpc.clickSaveButton();
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 18. Verify the validation of Intacct ID as symbols");
+				Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 19. Provide Intacct ID as alphabets");
+				Assert.assertTrue(cpc.enterIntacctID(IntacctID_alphabets), "The validation of Intacct ID");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 20. Click the Save Button");
+				cpc.clickSaveButton();
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 21. Verify the validation of Intacct ID as alphabetss");
+				Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 22. Enter blanck Intacct ID");
+				Assert.assertTrue(cpc.enterIntacctID(" "), "The validation of Intacct ID");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 23. Click the Save Button");
+				cpc.clickSaveButton();
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 24. Verify the validation of Intacct ID");
+				Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+
 			}
-
-			UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
-			cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CarID and verify the serach Result");
-			Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
-			Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO,
-					"Step 6. Verify whether Intacct ID field is visible in the record");
-			Assert.assertTrue(cpc.fieldExistanceVerification("IntacctID"), "The Presence of Intacct ID");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Provide a dummy Intacct ID (minimum 5 numbers)");
-			Assert.assertTrue(cpc.enterIntacctID(IntacctID_GreaterThan5), "The validation of Intacct ID");
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Click the Save Button");
-			cpc.clickSaveButton();
-			ExtentManager.extentTest.log(LogStatus.INFO,
-					"Step 9. Verify the validation of dummy Intacct ID (minimum 5 numbers)");
-			Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 10. Provide Intacct id less than 5 numbers");
-			Assert.assertTrue(cpc.enterIntacctID(IntacctID_LessThan5), "The validation of Intacct ID");
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 11. Click the Save Button");
-			cpc.clickSaveButton();
-			ExtentManager.extentTest.log(LogStatus.INFO,
-					"Step 12. Verify the validation of Invalid Intacct IDIntacct id less than 5 numbers");
-			Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
-
-			ExtentManager.extentTest.log(LogStatus.INFO,
-					"Step 13. Provide Intacct id as Special characters(_,!@#$%^&*)");
-			Assert.assertTrue(cpc.enterIntacctID(IntactID_Special), "The validation of Intacct ID");
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 14. Click the Save Button");
-			cpc.clickSaveButton();
-			ExtentManager.extentTest.log(LogStatus.INFO,
-					"Step 15. Verify the validation of Intacct id as Special characters(_,!@#$%^&*)");
-			Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 16. Provide Intacct ID as symbols");
-			Assert.assertTrue(cpc.enterIntacctID(IntacctID_symbols), "The validation of Intacct ID");
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 17. Click the Save Button");
-			cpc.clickSaveButton();
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 18. Verify the validation of Intacct ID as symbols");
-			Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 19. Provide Intacct ID as alphabets");
-			Assert.assertTrue(cpc.enterIntacctID(IntacctID_alphabets), "The validation of Intacct ID");
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 20. Click the Save Button");
-			cpc.clickSaveButton();
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 21. Verify the validation of Intacct ID as alphabetss");
-			Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 22. Enter blanck Intacct ID");
-			Assert.assertTrue(cpc.enterIntacctID(" "), "The validation of Intacct ID");
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 23. Click the Save Button");
-			cpc.clickSaveButton();
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 24. Verify the validation of Intacct ID");
-			Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+			else {
+				LOGGER.info("SIML Application is down");
+				boolean testResult = false;
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "SMIL Application is down",
+						testResult);				
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -360,7 +528,7 @@ public class Regression extends TestDriver {
 	public void CPC_Intacct_ID_Manadtory_Field() {
 		try {
 			LOGGER.info("------------Running Test Case 5-------------");
-			String cartID = "13478";
+			String cartID = "13544";
 			ExtentManager.extentTest.log(LogStatus.INFO, "Step 1. Login into SMIL Application");
 			TestDriver.appInstantiation(Apps.SMIL);
 			if (UIUtils.isObjectExist(driver,
@@ -369,6 +537,29 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CarID and verify the serach Result");
+				Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
+				Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 6. Verify whether Intacct ID field is visible in the record");
+				Assert.assertTrue(cpc.fieldExistanceVerification("IntacctID"), "The Presence of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Enter blanck Intacct ID");
+				Assert.assertTrue(cpc.enterIntacctID(" "), "The validation of Intacct ID");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Click the Save Button");
+				cpc.clickSaveButton();
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 9. Verify the validation of Intacct ID");
+				Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+
 			} else if (UIUtils.isObjectExist(driver,
 					TestDriver.getInstance().getObjRep().getLocator("SMIL_Login", "txtUsername"))) {
 				sm.login("SinghT", "Welcome@321");
@@ -376,29 +567,36 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CarID and verify the serach Result");
+				Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
+				Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 6. Verify whether Intacct ID field is visible in the record");
+				Assert.assertTrue(cpc.fieldExistanceVerification("IntacctID"), "The Presence of Intacct ID");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Enter blanck Intacct ID");
+				Assert.assertTrue(cpc.enterIntacctID(" "), "The validation of Intacct ID");
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Click the Save Button");
+				cpc.clickSaveButton();
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 9. Verify the validation of Intacct ID");
+				Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+
 			}
-
-			UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
-			cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CarID and verify the serach Result");
-			Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
-			Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO,
-					"Step 6. Verify whether Intacct ID field is visible in the record");
-			Assert.assertTrue(cpc.fieldExistanceVerification("IntacctID"), "The Presence of Intacct ID");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Enter blanck Intacct ID");
-			Assert.assertTrue(cpc.enterIntacctID(" "), "The validation of Intacct ID");
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Click the Save Button");
-			cpc.clickSaveButton();
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 9. Verify the validation of Intacct ID");
-			Assert.assertTrue(cpc.intacctIDValidation(), "The validation of Intacct ID");
+			else {
+				LOGGER.info("SIML Application is down");
+				boolean testResult = false;
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "SMIL Application is down",
+						testResult);				
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -421,8 +619,8 @@ public class Regression extends TestDriver {
 
 		try {
 			LOGGER.info("------------Running Test Case 6-------------");
-			String cartID = "13489";
-			String expectedDate = "01/01/2020";
+			String cartID = "13544";
+			String expectedDate = "10/17/2020";
 			ExtentManager.extentTest.log(LogStatus.INFO, "Step 1. Login into SMIL Application");
 			TestDriver.appInstantiation(Apps.SMIL);
 			if (UIUtils.isObjectExist(driver,
@@ -431,6 +629,60 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				UIUtils.waitUntilElementExists(driver,
+						TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "cartID"), 20);
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CartID and verify the serach Result");
+				Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
+				Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
+
+				WebElement beforeLegacyID = driver
+						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "LegacyID"));
+				WebElement beforeListPrice = driver
+						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "ListPrice"));
+
+				String bLegacyID = beforeLegacyID.getText();
+				String bListPrice = beforeListPrice.getText();
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 6. Change the Expected start date to future.");
+				Assert.assertTrue(cpc.enterExpectedDate(expectedDate), "The Expected start date");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Click the Save Button");
+				cpc.clickSaveButton();
+
+				WebElement afterLegacyID = driver
+						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "LegacyID"));
+				WebElement afterListPrice = driver
+						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "ListPrice"));
+
+				LOGGER.info("The Legacy ID Before-------" + bLegacyID);
+				LOGGER.info("The List Price Before-------" + bListPrice);
+				LOGGER.info("The Legacy ID After-------" + afterLegacyID.getText());
+				LOGGER.info("The List Price After-------" + afterListPrice.getText());
+
+				if (!bLegacyID.contentEquals(afterLegacyID.getText())) {
+					boolean result = true;
+					UIUtils.attachScreenShot(ExtentManager.extentTest,
+							"The Legacy ID before Future Expected Date - \"" + bLegacyID
+									+ "\" and the Legacy ID after Expected Date - \"" + afterLegacyID.getText() + "\"",
+							result);
+				} else {
+					boolean result = false;
+					UIUtils.attachScreenShot(ExtentManager.extentTest,
+							"The before Legacy ID should be different than the After Legacy ID. The Legacy ID before Future Expected Date - \""
+									+ bLegacyID + "\" and the Legacy ID after Expected Date - \"" + afterLegacyID.getText()
+									+ "\"",
+							result);
+				}
+				
 			} else if (UIUtils.isObjectExist(driver,
 					TestDriver.getInstance().getObjRep().getLocator("SMIL_Login", "txtUsername"))) {
 				sm.login("SinghT", "Welcome@321");
@@ -438,59 +690,65 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				UIUtils.waitUntilElementExists(driver,
+						TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "cartID"), 20);
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CartID and verify the serach Result");
+				Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
+				Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
+
+				WebElement beforeLegacyID = driver
+						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "LegacyID"));
+				WebElement beforeListPrice = driver
+						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "ListPrice"));
+
+				String bLegacyID = beforeLegacyID.getText();
+				String bListPrice = beforeListPrice.getText();
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 6. Change the Expected start date to future.");
+				Assert.assertTrue(cpc.enterExpectedDate(expectedDate), "The Expected start date");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Click the Save Button");
+				cpc.clickSaveButton();
+
+				WebElement afterLegacyID = driver
+						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "LegacyID"));
+				WebElement afterListPrice = driver
+						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "ListPrice"));
+
+				LOGGER.info("The Legacy ID Before-------" + bLegacyID);
+				LOGGER.info("The List Price Before-------" + bListPrice);
+				LOGGER.info("The Legacy ID After-------" + afterLegacyID.getText());
+				LOGGER.info("The List Price After-------" + afterListPrice.getText());
+
+				if (!bLegacyID.contentEquals(afterLegacyID.getText())) {
+					boolean result = true;
+					UIUtils.attachScreenShot(ExtentManager.extentTest,
+							"The Legacy ID before Future Expected Date - \"" + bLegacyID
+									+ "\" and the Legacy ID after Expected Date - \"" + afterLegacyID.getText() + "\"",
+							result);
+				} else {
+					boolean result = false;
+					UIUtils.attachScreenShot(ExtentManager.extentTest,
+							"The before Legacy ID should be different than the After Legacy ID. The Legacy ID before Future Expected Date - \""
+									+ bLegacyID + "\" and the Legacy ID after Expected Date - \"" + afterLegacyID.getText()
+									+ "\"",
+							result);
+				}
 			}
-
-			UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
-			cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
-
-			UIUtils.waitUntilElementExists(driver,
-					TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "cartID"), 20);
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CartID and verify the serach Result");
-			Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
-			Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
-
-			WebElement beforeLegacyID = driver
-					.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "LegacyID"));
-			WebElement beforeListPrice = driver
-					.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "ListPrice"));
-
-			String bLegacyID = beforeLegacyID.getText();
-			String bListPrice = beforeListPrice.getText();
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 6. Change the Expected start date to future.");
-			Assert.assertTrue(cpc.enterExpectedDate(expectedDate), "The Expected start date");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Click the Save Button");
-			cpc.clickSaveButton();
-
-			WebElement afterLegacyID = driver
-					.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "LegacyID"));
-			WebElement afterListPrice = driver
-					.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "ListPrice"));
-
-			LOGGER.info("The Legacy ID Before-------" + bLegacyID);
-			LOGGER.info("The List Price Before-------" + bListPrice);
-			LOGGER.info("The Legacy ID After-------" + afterLegacyID.getText());
-			LOGGER.info("The List Price After-------" + afterListPrice.getText());
-
-			if (!bLegacyID.contentEquals(afterLegacyID.getText())) {
-				boolean result = true;
-				UIUtils.attachScreenShot(ExtentManager.extentTest,
-						"The Legacy ID before Future Expected Date - \"" + bLegacyID
-								+ "\" and the Legacy ID after Expected Date - \"" + afterLegacyID.getText() + "\"",
-						result);
-			} else {
-				boolean result = false;
-				UIUtils.attachScreenShot(ExtentManager.extentTest,
-						"The before Legacy ID should be different than the After Legacy ID. The Legacy ID before Future Expected Date - \""
-								+ bLegacyID + "\" and the Legacy ID after Expected Date - \"" + afterLegacyID.getText()
-								+ "\"",
-						result);
+			else {
+				LOGGER.info("SIML Application is down");
+				boolean testResult = false;
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "SMIL Application is down",
+						testResult);				
 			}
 
 		} catch (Exception e) {
@@ -514,9 +772,9 @@ public class Regression extends TestDriver {
 
 		try {
 			LOGGER.info("------------Running Test Case 7-------------");
-			String cartID = "13489";
-			String expectedStartDate = "10/7/2019";
-			String expectedLegacyID = "ADX-GTW/D20191001A";
+			String cartID = "13544";
+			String expectedStartDate = "10/17/2019";
+			String expectedLegacyID = "PMC-DFJ/D20191001A";
 			ExtentManager.extentTest.log(LogStatus.INFO, "Step 1. Login into SMIL Application");
 			TestDriver.appInstantiation(Apps.SMIL);
 			ExtentManager.extentTest.log(LogStatus.INFO, "Step 1. Login into SMIL Application");
@@ -527,6 +785,39 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				UIUtils.waitUntilElementExists(driver,
+						TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "cartID"), 20);
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CartID and verify the serach Result");
+				Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
+				Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 6. Change the Expected start date from CPC");
+				Assert.assertTrue(cpc.enterExpectedDate(expectedStartDate), "The Expected start date");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Click the Save Button");
+				cpc.clickSaveButton();
+
+				WebElement afterLegacyID = driver
+						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "LegacyID"));
+				String actualLegacyID = afterLegacyID.getText();
+				LOGGER.info("The Legacy ID After-------" + afterLegacyID.getText());
+
+				if (actualLegacyID.contentEquals(expectedLegacyID)) {
+					boolean result = true;
+					UIUtils.attachScreenShot(ExtentManager.extentTest, "The record is mapped to valid session", result);
+				} else {
+					boolean result = false;
+					UIUtils.attachScreenShot(ExtentManager.extentTest, "The record is mapped to valid session", result);
+				}
 			} else if (UIUtils.isObjectExist(driver,
 					TestDriver.getInstance().getObjRep().getLocator("SMIL_Login", "txtUsername"))) {
 				sm.login("SinghT", "Welcome@321");
@@ -534,39 +825,45 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				UIUtils.waitUntilElementExists(driver,
+						TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "cartID"), 20);
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CartID and verify the serach Result");
+				Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
+				Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 6. Change the Expected start date from CPC");
+				Assert.assertTrue(cpc.enterExpectedDate(expectedStartDate), "The Expected start date");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Click the Save Button");
+				cpc.clickSaveButton();
+
+				WebElement afterLegacyID = driver
+						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "LegacyID"));
+				String actualLegacyID = afterLegacyID.getText();
+				LOGGER.info("The Legacy ID After-------" + afterLegacyID.getText());
+
+				if (actualLegacyID.contentEquals(expectedLegacyID)) {
+					boolean result = true;
+					UIUtils.attachScreenShot(ExtentManager.extentTest, "The record is mapped to valid session", result);
+				} else {
+					boolean result = false;
+					UIUtils.attachScreenShot(ExtentManager.extentTest, "The record is mapped to valid session", result);
+				}
 			}
-
-			UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
-			cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
-
-			UIUtils.waitUntilElementExists(driver,
-					TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "cartID"), 20);
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CartID and verify the serach Result");
-			Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
-			Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 6. Change the Expected start date from CPC");
-			Assert.assertTrue(cpc.enterExpectedDate(expectedStartDate), "The Expected start date");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Click the Save Button");
-			cpc.clickSaveButton();
-
-			WebElement afterLegacyID = driver
-					.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "LegacyID"));
-			String actualLegacyID = afterLegacyID.getText();
-			LOGGER.info("The Legacy ID After-------" + afterLegacyID.getText());
-
-			if (actualLegacyID.contentEquals(expectedLegacyID)) {
-				boolean result = true;
-				UIUtils.attachScreenShot(ExtentManager.extentTest, "The record is mapped to valid session", result);
-			} else {
-				boolean result = false;
-				UIUtils.attachScreenShot(ExtentManager.extentTest, "The record is mapped to valid session", result);
+			else {
+				LOGGER.info("SIML Application is down");
+				boolean testResult = false;
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "SMIL Application is down",
+						testResult);				
 			}
 
 		} catch (Exception e) {
@@ -590,20 +887,20 @@ public class Regression extends TestDriver {
 
 		try {
 			LOGGER.info("------------Running Test Case 8-------------");
-			String cartID = "13478";
-			String expected_PersonID = "G3839829";
-			String expected_IntacctID = "3839829";
+			String cartID = "13544";
+			String expected_PersonID = "G3872329";
+			String expected_IntacctID = "3872329";
 			String expected_Salutation = "";
-			String expected_FirstName = "Dhaval";
+			String expected_FirstName = "Clorece";
 			String expected_MiddleInitial = "";
-			String expected_LastName = "Shah";
-			String expected_EmailAddress = "dhaval.shah@astellas.com.test";
-			String expected_WorkPhone = "224-205-8576";
+			String expected_LastName = "Pratt";
+			String expected_EmailAddress = "clorece.pratt@stallergenesgreer.com.test";
+			String expected_WorkPhone = "828-759-7477";
 			String expected_MobilePhone = "";
 			String expected_Fax = "";
 			String expected_Suffix = "";
 			String expected_JobStatus = "";
-			String expected_Company = "Astellas US";
+			String expected_Company = "Stallergenes Greer";
 			String expected_JobTitle = "";
 			ExtentManager.extentTest.log(LogStatus.INFO, "Step 1. Login into SMIL Application");
 			TestDriver.appInstantiation(Apps.SMIL);
@@ -615,6 +912,53 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				UIUtils.waitUntilElementExists(driver,
+						TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "cartID"), 20);
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CartID and verify the serach Result");
+				Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
+				Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
+
+				Map<String, String> intacctDetail = cpc.getIntacctDetail();
+				if (intacctDetail.containsKey("PersonID")) {
+					Assert.assertEquals(expected_PersonID, intacctDetail.get("PersonID"), "The Person ID is matched");
+					Assert.assertEquals(expected_IntacctID, intacctDetail.get("IntacctID"), "The Intacct ID is matched");
+					Assert.assertEquals(expected_Salutation, intacctDetail.get("Salutation"), "The Salutation is matched");
+					Assert.assertEquals(expected_FirstName, intacctDetail.get("FirstName"), "The First Name is matched");
+					Assert.assertEquals(expected_MiddleInitial, intacctDetail.get("MiddleInitial"),
+							"The MiddleInitial is matched");
+					Assert.assertEquals(expected_LastName, intacctDetail.get("LastName"), "The LastName is matched");
+					Assert.assertEquals(expected_EmailAddress, intacctDetail.get("EmailAddress"),
+							"The EmailAddress is matched");
+					Assert.assertEquals(expected_WorkPhone, intacctDetail.get("WorkPhone"), "The WorkPhone is matched");
+					Assert.assertEquals(expected_MobilePhone, intacctDetail.get("MobilePhone"),
+							"The MobilePhone is matched");
+					Assert.assertEquals(expected_Fax, intacctDetail.get("Fax"), "The Fax is matched");
+					Assert.assertEquals(expected_Suffix, intacctDetail.get("Suffix"), "The Suffix is matched");
+					Assert.assertEquals(expected_JobStatus, intacctDetail.get("JobStatus"), "The JobStatus is matched");
+					Assert.assertEquals(expected_Company, intacctDetail.get("Company"), "The Company is matched");
+					Assert.assertEquals(expected_JobTitle, intacctDetail.get("JobTitle"), "The JobTitle is matched");
+					boolean serachIntacctResult = true;
+					UIUtils.attachScreenShot(ExtentManager.extentTest, "The Intacct Detail verification",
+							serachIntacctResult);
+					UIUtils.clickElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter",
+							"SearchedIntacct_Close"), driver);
+				} else {
+					boolean serachIntacctResult = false;
+					UIUtils.attachScreenShot(ExtentManager.extentTest, "The Intacct Detail verification",
+							serachIntacctResult);
+					UIUtils.clickElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter",
+							"SearchedIntacct_Close"), driver);
+				}
+				
 			} else if (UIUtils.isObjectExist(driver,
 					TestDriver.getInstance().getObjRep().getLocator("SMIL_Login", "txtUsername"))) {
 				sm.login("SinghT", "Welcome@321");
@@ -622,52 +966,58 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				UIUtils.waitUntilElementExists(driver,
+						TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "cartID"), 20);
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CartID and verify the serach Result");
+				Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
+				Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
+
+				Map<String, String> intacctDetail = cpc.getIntacctDetail();
+				if (intacctDetail.containsKey("PersonID")) {
+					Assert.assertEquals(expected_PersonID, intacctDetail.get("PersonID"), "The Person ID is matched");
+					Assert.assertEquals(expected_IntacctID, intacctDetail.get("IntacctID"), "The Intacct ID is matched");
+					Assert.assertEquals(expected_Salutation, intacctDetail.get("Salutation"), "The Salutation is matched");
+					Assert.assertEquals(expected_FirstName, intacctDetail.get("FirstName"), "The First Name is matched");
+					Assert.assertEquals(expected_MiddleInitial, intacctDetail.get("MiddleInitial"),
+							"The MiddleInitial is matched");
+					Assert.assertEquals(expected_LastName, intacctDetail.get("LastName"), "The LastName is matched");
+					Assert.assertEquals(expected_EmailAddress, intacctDetail.get("EmailAddress"),
+							"The EmailAddress is matched");
+					Assert.assertEquals(expected_WorkPhone, intacctDetail.get("WorkPhone"), "The WorkPhone is matched");
+					Assert.assertEquals(expected_MobilePhone, intacctDetail.get("MobilePhone"),
+							"The MobilePhone is matched");
+					Assert.assertEquals(expected_Fax, intacctDetail.get("Fax"), "The Fax is matched");
+					Assert.assertEquals(expected_Suffix, intacctDetail.get("Suffix"), "The Suffix is matched");
+					Assert.assertEquals(expected_JobStatus, intacctDetail.get("JobStatus"), "The JobStatus is matched");
+					Assert.assertEquals(expected_Company, intacctDetail.get("Company"), "The Company is matched");
+					Assert.assertEquals(expected_JobTitle, intacctDetail.get("JobTitle"), "The JobTitle is matched");
+					boolean serachIntacctResult = true;
+					UIUtils.attachScreenShot(ExtentManager.extentTest, "The Intacct Detail verification",
+							serachIntacctResult);
+					UIUtils.clickElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter",
+							"SearchedIntacct_Close"), driver);
+				} else {
+					boolean serachIntacctResult = false;
+					UIUtils.attachScreenShot(ExtentManager.extentTest, "The Intacct Detail verification",
+							serachIntacctResult);
+					UIUtils.clickElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter",
+							"SearchedIntacct_Close"), driver);
+				}
 			}
-
-			UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
-			cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
-
-			UIUtils.waitUntilElementExists(driver,
-					TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "cartID"), 20);
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the CartID and verify the serach Result");
-			Assert.assertTrue(cpc.basicSerach(cartID), "Verifying the Basic Serach Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 5. Click on \"Edit\" icon for one of the serach record");
-			Assert.assertTrue(cpc.clickSearchEdit(), "The Serached Result");
-
-			Map<String, String> intacctDetail = cpc.getIntacctDetail();
-			if (intacctDetail.containsKey("PersonID")) {
-				Assert.assertEquals(expected_PersonID, intacctDetail.get("PersonID"), "The Person ID is matched");
-				Assert.assertEquals(expected_IntacctID, intacctDetail.get("IntacctID"), "The Intacct ID is matched");
-				Assert.assertEquals(expected_Salutation, intacctDetail.get("Salutation"), "The Salutation is matched");
-				Assert.assertEquals(expected_FirstName, intacctDetail.get("FirstName"), "The First Name is matched");
-				Assert.assertEquals(expected_MiddleInitial, intacctDetail.get("MiddleInitial"),
-						"The MiddleInitial is matched");
-				Assert.assertEquals(expected_LastName, intacctDetail.get("LastName"), "The LastName is matched");
-				Assert.assertEquals(expected_EmailAddress, intacctDetail.get("EmailAddress"),
-						"The EmailAddress is matched");
-				Assert.assertEquals(expected_WorkPhone, intacctDetail.get("WorkPhone"), "The WorkPhone is matched");
-				Assert.assertEquals(expected_MobilePhone, intacctDetail.get("MobilePhone"),
-						"The MobilePhone is matched");
-				Assert.assertEquals(expected_Fax, intacctDetail.get("Fax"), "The Fax is matched");
-				Assert.assertEquals(expected_Suffix, intacctDetail.get("Suffix"), "The Suffix is matched");
-				Assert.assertEquals(expected_JobStatus, intacctDetail.get("JobStatus"), "The JobStatus is matched");
-				Assert.assertEquals(expected_Company, intacctDetail.get("Company"), "The Company is matched");
-				Assert.assertEquals(expected_JobTitle, intacctDetail.get("JobTitle"), "The JobTitle is matched");
-				boolean serachIntacctResult = true;
-				UIUtils.attachScreenShot(ExtentManager.extentTest, "The Intacct Detail verification",
-						serachIntacctResult);
-				UIUtils.clickElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter",
-						"SearchedIntacct_Close"), driver);
-			} else {
-				boolean serachIntacctResult = false;
-				UIUtils.attachScreenShot(ExtentManager.extentTest, "The Intacct Detail verification",
-						serachIntacctResult);
-				UIUtils.clickElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter",
-						"SearchedIntacct_Close"), driver);
+			else {
+				LOGGER.info("SIML Application is down");
+				boolean testResult = false;
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "SMIL Application is down",
+						testResult);				
 			}
 
 		} catch (Exception e) {
@@ -701,6 +1051,18 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Processed/Access Granted\"");
+				Assert.assertTrue(cpc.advanceSearch("", "", "", "", status, "", "", "", "", ""),
+						"Verifying the Advance Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 5. Check if the edit icon is present and detail icon is present");
+				Assert.assertTrue(cpc.registrationStatusVerification(status), "The Serached Result");
 			} else if (UIUtils.isObjectExist(driver,
 					TestDriver.getInstance().getObjRep().getLocator("SMIL_Login", "txtUsername"))) {
 				sm.login("SinghT", "Welcome@321");
@@ -708,19 +1070,25 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Processed/Access Granted\"");
+				Assert.assertTrue(cpc.advanceSearch("", "", "", "", status, "", "", "", "", ""),
+						"Verifying the Advance Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 5. Check if the edit icon is present and detail icon is present");
+				Assert.assertTrue(cpc.registrationStatusVerification(status), "The Serached Result");
 			}
-
-			UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
-			cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Processed/Access Granted\"");
-			Assert.assertTrue(cpc.advanceSearch("", "", "", "", status, "", "", "", "", ""),
-					"Verifying the Advance Serach Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO,
-					"Step 5. Check if the edit icon is present and detail icon is present");
-			Assert.assertTrue(cpc.registrationStatusVerification(status), "The Serached Result");
+			else {
+				LOGGER.info("SIML Application is down");
+				boolean testResult = false;
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "SMIL Application is down",
+						testResult);		
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -752,6 +1120,18 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Deleted\"");
+				Assert.assertTrue(cpc.advanceSearch("", "", "", "", status, "", "", "", "", ""),
+						"Verifying the Advance Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 5. Check if the edit icon is present and detail icon is present");
+				Assert.assertTrue(cpc.registrationStatusVerification(status), "The Serached Result");
 			} else if (UIUtils.isObjectExist(driver,
 					TestDriver.getInstance().getObjRep().getLocator("SMIL_Login", "txtUsername"))) {
 				sm.login("SinghT", "Welcome@321");
@@ -759,20 +1139,25 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Deleted\"");
+				Assert.assertTrue(cpc.advanceSearch("", "", "", "", status, "", "", "", "", ""),
+						"Verifying the Advance Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 5. Check if the edit icon is present and detail icon is present");
+				Assert.assertTrue(cpc.registrationStatusVerification(status), "The Serached Result");
 			}
-
-			UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
-			cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Deleted\"");
-			Assert.assertTrue(cpc.advanceSearch("", "", "", "", status, "", "", "", "", ""),
-					"Verifying the Advance Serach Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO,
-					"Step 5. Check if the edit icon is present and detail icon is present");
-			Assert.assertTrue(cpc.registrationStatusVerification(status), "The Serached Result");
-
+			else {
+				LOGGER.info("SIML Application is down");
+				boolean testResult = false;
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "SMIL Application is down",
+						testResult);				
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			boolean testResult = false;
@@ -795,6 +1180,19 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Pending\"");
+				Assert.assertTrue(cpc.advanceSearch("", "", "", "", status, "", "", "", "", ""),
+						"Verifying the Advance Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 5. Check if the edit icon is present and detail icon is present");
+				Assert.assertTrue(cpc.registrationStatusVerification(status), "The Serached Result");
+
 			} else if (UIUtils.isObjectExist(driver,
 					TestDriver.getInstance().getObjRep().getLocator("SMIL_Login", "txtUsername"))) {
 				sm.login("SinghT", "Welcome@321");
@@ -802,19 +1200,26 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Pending\"");
+				Assert.assertTrue(cpc.advanceSearch("", "", "", "", status, "", "", "", "", ""),
+						"Verifying the Advance Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 5. Check if the edit icon is present and detail icon is present");
+				Assert.assertTrue(cpc.registrationStatusVerification(status), "The Serached Result");
+
 			}
-
-			UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
-			cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Pending\"");
-			Assert.assertTrue(cpc.advanceSearch("", "", "", "", status, "", "", "", "", ""),
-					"Verifying the Advance Serach Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO,
-					"Step 5. Check if the edit icon is present and detail icon is present");
-			Assert.assertTrue(cpc.registrationStatusVerification(status), "The Serached Result");
+			else {
+				LOGGER.info("SIML Application is down");
+				boolean testResult = false;
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "SMIL Application is down",
+						testResult);				
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -838,6 +1243,18 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Awaiting Access\"");
+				Assert.assertTrue(cpc.advanceSearch("", "", "", "", status, "", "", "", "", ""),
+						"Verifying the Advance Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 5. Check if the edit icon is present and detail icon is present");
+				Assert.assertTrue(cpc.registrationStatusVerification(status), "The Serached Result");
 			} else if (UIUtils.isObjectExist(driver,
 					TestDriver.getInstance().getObjRep().getLocator("SMIL_Login", "txtUsername"))) {
 				sm.login("SinghT", "Welcome@321");
@@ -845,19 +1262,25 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Awaiting Access\"");
+				Assert.assertTrue(cpc.advanceSearch("", "", "", "", status, "", "", "", "", ""),
+						"Verifying the Advance Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 5. Check if the edit icon is present and detail icon is present");
+				Assert.assertTrue(cpc.registrationStatusVerification(status), "The Serached Result");
 			}
-
-			UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
-			cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Awaiting Access\"");
-			Assert.assertTrue(cpc.advanceSearch("", "", "", "", status, "", "", "", "", ""),
-					"Verifying the Advance Serach Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO,
-					"Step 5. Check if the edit icon is present and detail icon is present");
-			Assert.assertTrue(cpc.registrationStatusVerification(status), "The Serached Result");
+			else {
+				LOGGER.info("SIML Application is down");
+				boolean testResult = false;
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "SMIL Application is down",
+						testResult);				
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -889,6 +1312,41 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Pending\"");
+				Assert.assertTrue(cpc.advanceSearch("", "", "", "", status, "", "", "", "", ""),
+						"Verifying the Advance Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 5. Check if the edit icon is present and detail icon is present");
+				Assert.assertTrue(cpc.registrationStatusVerification("Awaiting Access"), "The Serached Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 6. Add some notes without changing the status");
+				Assert.assertTrue(cpc.enterNotes("This is Testing Note"), "The Note Result");
+
+				cpc.clickSaveButton();
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Again go to edit");
+				Assert.assertTrue(cpc.clickEditButton(), "The Record is Edited");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Update notes again with changing the status");
+				Assert.assertTrue(cpc.enterNotes("The Note is Updated again."), "The Note Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 9. Update the Status");
+				Assert.assertTrue(cpc.selectStatus("Pending"), "The Record is Edited");
+
+				cpc.clickSaveButton();
+
+				String expectedResult = "The Note is Updated again.";
+				WebElement actualResult = driver
+						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "Notes"));
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 10. Verify the Updated Note is Savd or not");
+				Assert.assertEquals(actualResult.getText(), expectedResult, "The Note is verified");
 			} else if (UIUtils.isObjectExist(driver,
 					TestDriver.getInstance().getObjRep().getLocator("SMIL_Login", "txtUsername"))) {
 				sm.login("SinghT", "Welcome@321");
@@ -896,42 +1354,50 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Pending\"");
+				Assert.assertTrue(cpc.advanceSearch("", "", "", "", status, "", "", "", "", ""),
+						"Verifying the Advance Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 5. Check if the edit icon is present and detail icon is present");
+				Assert.assertTrue(cpc.registrationStatusVerification("Awaiting Access"), "The Serached Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 6. Add some notes without changing the status");
+				Assert.assertTrue(cpc.enterNotes("This is Testing Note"), "The Note Result");
+
+				cpc.clickSaveButton();
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Again go to edit");
+				Assert.assertTrue(cpc.clickEditButton(), "The Record is Edited");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Update notes again with changing the status");
+				Assert.assertTrue(cpc.enterNotes("The Note is Updated again."), "The Note Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 9. Update the Status");
+				Assert.assertTrue(cpc.selectStatus("Pending"), "The Record is Edited");
+
+				cpc.clickSaveButton();
+
+				String expectedResult = "The Note is Updated again.";
+				WebElement actualResult = driver
+						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "Notes"));
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 10. Verify the Updated Note is Savd or not");
+				Assert.assertEquals(actualResult.getText(), expectedResult, "The Note is verified");
+			}
+			else {
+				LOGGER.info("SIML Application is down");
+				boolean testResult = false;
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "SMIL Application is down",
+						testResult);				
 			}
 
-			UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
-			cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Pending\"");
-			Assert.assertTrue(cpc.advanceSearch("", "", "", "", status, "", "", "", "", ""),
-					"Verifying the Advance Serach Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO,
-					"Step 5. Check if the edit icon is present and detail icon is present");
-			Assert.assertTrue(cpc.registrationStatusVerification("Awaiting Access"), "The Serached Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 6. Add some notes without changing the status");
-			Assert.assertTrue(cpc.enterNotes("This is Testing Note"), "The Note Result");
-
-			cpc.clickSaveButton();
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Again go to edit");
-			Assert.assertTrue(cpc.clickEditButton(), "The Record is Edited");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Update notes again with changing the status");
-			Assert.assertTrue(cpc.enterNotes("The Note is Updated again."), "The Note Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 9. Update the Status");
-			Assert.assertTrue(cpc.selectStatus("Pending"), "The Record is Edited");
-
-			cpc.clickSaveButton();
-
-			String expectedResult = "The Note is Updated again.";
-			WebElement actualResult = driver
-					.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "Notes"));
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 10. Verify the Updated Note is Savd or not");
-			Assert.assertEquals(actualResult.getText(), expectedResult, "The Note is verified");
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -954,7 +1420,7 @@ public class Regression extends TestDriver {
 
 		try {
 			LOGGER.info("------------Running Test Case 14-------------");
-			String name = "Jones";
+			String name = "Degoul";
 			String status = "Awaiting Access";
 			String note = "This is Testing Note";
 			String updatedNote = "The Note is Updated again.";
@@ -966,6 +1432,43 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Awaiting Access\"");
+				Assert.assertTrue(cpc.advanceSearch(name, "", "", "", status, "", "", "", "", ""),
+						"Verifying the Advance Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 5. Check if the edit icon is present and detail icon is present");
+				Assert.assertTrue(cpc.registrationStatusVerification("Awaiting Access"), "The Serached Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 6. Add some notes without changing the status");
+				Assert.assertTrue(cpc.enterNotes(note), "The Note Result");
+
+				cpc.clickSaveButton();
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Again go to edit");
+				Assert.assertTrue(cpc.clickEditButton(), "The Record is Edited");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Update notes again with changing the status");
+				Assert.assertTrue(cpc.enterNotes(updatedNote), "The Note Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 9. Update the Status");
+				Assert.assertTrue(cpc.selectStatus("Awaiting Access"), "The Record is Edited");
+
+				cpc.clickSaveButton();
+
+				WebElement actualResult = driver
+						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "Notes"));
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 10. Verify the Updated Note is Savd or not");
+				Assert.assertEquals(actualResult.getText(), updatedNote, "The Note is verified");
+
+				cpc.clickEditButton();
+				cpc.selectStatus("Pending");
+				cpc.clickSaveButton();
 			} else if (UIUtils.isObjectExist(driver,
 					TestDriver.getInstance().getObjRep().getLocator("SMIL_Login", "txtUsername"))) {
 				sm.login("SinghT", "Welcome@321");
@@ -973,41 +1476,51 @@ public class Regression extends TestDriver {
 						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_Common", "SMIL_Home_Page"));
 				ExtentManager.extentTest.log(LogStatus.INFO, "Step 2. Verifying the SMIL Home Page");
 				Assert.assertEquals(results.getText(), "Service Management Integration for Learning");
+				
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
+				cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Awaiting Access\"");
+				Assert.assertTrue(cpc.advanceSearch(name, "", "", "", status, "", "", "", "", ""),
+						"Verifying the Advance Serach Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO,
+						"Step 5. Check if the edit icon is present and detail icon is present");
+				Assert.assertTrue(cpc.registrationStatusVerification("Awaiting Access"), "The Serached Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 6. Add some notes without changing the status");
+				Assert.assertTrue(cpc.enterNotes(note), "The Note Result");
+
+				cpc.clickSaveButton();
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Again go to edit");
+				Assert.assertTrue(cpc.clickEditButton(), "The Record is Edited");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Update notes again with changing the status");
+				Assert.assertTrue(cpc.enterNotes(updatedNote), "The Note Result");
+
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 9. Update the Status");
+				Assert.assertTrue(cpc.selectStatus("Awaiting Access"), "The Record is Edited");
+
+				cpc.clickSaveButton();
+
+				WebElement actualResult = driver
+						.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "Notes"));
+				ExtentManager.extentTest.log(LogStatus.INFO, "Step 10. Verify the Updated Note is Savd or not");
+				Assert.assertEquals(actualResult.getText(), updatedNote, "The Note is verified");
+
+				cpc.clickEditButton();
+				cpc.selectStatus("Pending");
+				cpc.clickSaveButton();
 			}
-
-			UIUtils.attachScreenShot(ExtentManager.extentTest, "The SMIL Home Page", cpc.isPageOpen());
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Click on \"Processing Center\"");
-			cpc = (SMILCPC) common.clickMenuTab("ProcessingCenter");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Enter the Status as \"Awaiting Access\"");
-			Assert.assertTrue(cpc.advanceSearch(name, "", "", "", status, "", "", "", "", ""),
-					"Verifying the Advance Serach Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO,
-					"Step 5. Check if the edit icon is present and detail icon is present");
-			Assert.assertTrue(cpc.registrationStatusVerification("Awaiting Access"), "The Serached Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 6. Add some notes without changing the status");
-			Assert.assertTrue(cpc.enterNotes(note), "The Note Result");
-
-			cpc.clickSaveButton();
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 7. Again go to edit");
-			Assert.assertTrue(cpc.clickEditButton(), "The Record is Edited");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 8. Update notes again with changing the status");
-			Assert.assertTrue(cpc.enterNotes(updatedNote), "The Note Result");
-
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 9. Update the Status");
-			Assert.assertTrue(cpc.selectStatus("Pending"), "The Record is Edited");
-
-			cpc.clickSaveButton();
-
-			WebElement actualResult = driver
-					.findElement(TestDriver.getInstance().getObjRep().getLocator("SMIL_ProcessingCenter", "Notes"));
-			ExtentManager.extentTest.log(LogStatus.INFO, "Step 10. Verify the Updated Note is Savd or not");
-			Assert.assertEquals(actualResult.getText(), updatedNote, "The Note is verified");
-
+			else {
+				LOGGER.info("SIML Application is down");
+				boolean testResult = false;
+				UIUtils.attachScreenShot(ExtentManager.extentTest, "SMIL Application is down",
+						testResult);				
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			boolean testResult = false;
@@ -1037,7 +1550,7 @@ public class Regression extends TestDriver {
 			Assert.assertTrue(rp.loginReseller("India"), "The Reseller Home Page");
 
 			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Select the Course");
-			Assert.assertTrue(rp.courseSelection("India", "PMC-CPM MPS520: Managing Projects"),
+			Assert.assertTrue(rp.courseSelection("India", "PMC-CPM  MPS520: Managing Projects"),
 					"The course is selected");
 
 			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Complete the Registrations");
@@ -1149,7 +1662,7 @@ public class Regression extends TestDriver {
 			ExtentManager.extentTest.log(LogStatus.INFO,
 					"Step 11. Verifying the Error message for Expiration Date Licence Code and No Seat is remaining");
 			Assert.assertEquals(actualResult.getText(), expectedResult, "Verifying the Error Message");
-
+			
 			// Number of Seats
 			licenceCode = "EVERH-003";
 			ExtentManager.extentTest.log(LogStatus.INFO, "Step 12. Enter the Licence Code");
@@ -1211,7 +1724,7 @@ public class Regression extends TestDriver {
 			Assert.assertTrue(rp.loginReseller("India"), "The Reseller Home Page");
 
 			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Select the Course");
-			Assert.assertTrue(rp.courseSelection("India", "PMC-CPM MPS520: Managing Projects"),
+			Assert.assertTrue(rp.courseSelection("India", "PMC-CPM  MPS520: Managing Projects"),
 					"The course is selected");
 
 			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Complete the Registrations");
@@ -1300,7 +1813,7 @@ public class Regression extends TestDriver {
 			Assert.assertTrue(rp.loginReseller("India"), "The Reseller Home Page");
 
 			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Select the Course");
-			Assert.assertTrue(rp.courseSelection("India", "PMC-CPM MPS520: Managing Projects"),
+			Assert.assertTrue(rp.courseSelection("India", "PMC-CPM  MPS520: Managing Projects"),
 					"The course is selected");
 
 			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Complete the Registrations");
@@ -1389,7 +1902,7 @@ public class Regression extends TestDriver {
 			Assert.assertTrue(rp.loginReseller("India"), "The Reseller Home Page");
 
 			ExtentManager.extentTest.log(LogStatus.INFO, "Step 3. Select the Course");
-			Assert.assertTrue(rp.courseSelection("India", "PMC-CPM MPS520: Managing Projects"),
+			Assert.assertTrue(rp.courseSelection("India", "PMC-CPM  MPS520: Managing Projects"),
 					"The course is selected");
 
 			ExtentManager.extentTest.log(LogStatus.INFO, "Step 4. Complete the Registrations");
@@ -1762,7 +2275,6 @@ public class Regression extends TestDriver {
 
 		try {
 			LOGGER.info("------------Running Test Case 22-------------");
-			System.out.println("The random value is----" + randomNumber);
 			String name = "TSB_" + randomNumber;
 			String emailID = "TSB_" + randomNumber + "@mailinator.com";
 			String paymentMethod = "License";
