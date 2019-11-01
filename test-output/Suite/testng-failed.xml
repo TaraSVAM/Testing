@@ -8,9 +8,9 @@
           <include name="appInitilization"/>
           <include name="generateResult"/>
           <include name="startReporting"/>
-          <include name="Registration_Verification_ResellerToCPC"/>
           <include name="suiteSetup"/>
           <include name="suiteTearDown"/>
+          <include name="ResellerApproval_CPC_processedAccess_Granted_Learning"/>
           <include name="testTearDown"/>
           <include name="testResult"/>
         </methods>

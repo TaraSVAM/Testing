@@ -108,37 +108,37 @@ public class Reseller extends AbstractPage {
 
 	public boolean courseSelection(String country, String course) {
 		LOGGER.info("Course is selecting in Reseller");
-		List<WebElement> result = driver.findElements(By.xpath("//tbody//tr"));
-
+//		List<WebElement> result = driver.findElements(By.xpath("//tbody//tr"));
+		
+		List<WebElement> result = driver
+				.findElements(TestDriver.getInstance().getObjRep().getLocator(SCREENNAME, "Home_Product"));
 		for (WebElement webElement : result) {
 			if (webElement.getText().contains(course)) {
-				LOGGER.info("The value of locator---"+webElement.getText());
 				switch (course) {
-
 				// Project Management Core Courses
 				case "PMC-CPM MPS520: Managing Projects":
-					driver.findElement(By.xpath("//tr[2]//a")).click();
+					UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[2]//a")));
 					return true;
 				case "PMC-BQQ PLM520: Project Leadership, Management and Communications":
-					driver.findElement(By.xpath("//tr[3]//a")).click();
+					UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[3]//a")));
 					return true;
 				case "PMC-BGK CON520: Contract Management Principles and Practices":
-					driver.findElement(By.xpath("//tr[4]//a")).click();
+					UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[4]//a")));
 					return true;
 				case "PMC-BVF QTY520: Quality for Project Managers":
-					driver.findElement(By.xpath("//tr[5]//a")).click();
+					UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[5]//a")));
 					return true;
 				case "PMC-BVZ SCC520: Scheduling and Cost Control":
-					driver.findElement(By.xpath("//tr[6]//a")).click();
+					UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[6]//a")));
 					return true;
 				case "PMC-CTL RSK520: Risk Management":
-					driver.findElement(By.xpath("//tr[7]//a")).click();
+					UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[7]//a")));
 					return true;
 				case "ITP-DBR MIT520: Managing IT Projects":
-					driver.findElement(By.xpath("//tr[8]//a")).click();
+					UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[8]//a")));
 					return true;
 				case "PMC-BTP PMA520: Project Management Applications":
-					driver.findElement(By.xpath("//tr[9]//a")).click();
+					UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[9]//a")));
 					return true;
 
 				case "PMC-BSJ PMP520: PMP Exam Preparation":
@@ -146,7 +146,7 @@ public class Reseller extends AbstractPage {
 							|| country.contentEquals("Singapore") || country.contentEquals("China")
 							|| country.contentEquals("India") || country.contentEquals("UK")
 							|| country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
-						driver.findElement(By.xpath("//tr[10]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[10]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -158,15 +158,15 @@ public class Reseller extends AbstractPage {
 							|| country.contentEquals("Singapore") || country.contentEquals("China")
 							|| country.contentEquals("India") || country.contentEquals("UK")
 							|| country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
-						driver.findElement(By.xpath("//tr[11]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[11]//a")));
 						return true;
 					}
 
 					else if (country.contentEquals("Australia")) {
-						driver.findElement(By.xpath("//tr[11]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[11]//a")));
 						return true;
 					} else if (country.contentEquals("Spain")) {
-						driver.findElement(By.xpath("//tr[10]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[10]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -178,13 +178,13 @@ public class Reseller extends AbstractPage {
 							|| country.contentEquals("Singapore") || country.contentEquals("China")
 							|| country.contentEquals("India") || country.contentEquals("UK")
 							|| country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
-						driver.findElement(By.xpath("//tr[12]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[12]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
-						driver.findElement(By.xpath("//tr[10]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[10]//a")));
 						return true;
 					} else if (country.contentEquals("Spain")) {
-						driver.findElement(By.xpath("//tr[11]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[11]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -195,18 +195,18 @@ public class Reseller extends AbstractPage {
 				case "BAP-DK6 TVR520: Testing Techniques for Tracing and Validating Requirements":
 					if (country.contentEquals("Sweden") || country.contentEquals("China") || country.contentEquals("UK")
 							|| country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
-						driver.findElement(By.xpath("//tr[16]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[16]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
-						driver.findElement(By.xpath("//tr[14]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[14]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
-						driver.findElement(By.xpath("//tr[17]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[17]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
-						driver.findElement(By.xpath("//tr[13]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[13]//a")));
 					} else if (country.contentEquals("Spain") || country.contentEquals("Singapore")) {
-						driver.findElement(By.xpath("//tr[15]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[15]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -215,19 +215,19 @@ public class Reseller extends AbstractPage {
 				case "BAP-D2J: Developing Use Cases":
 					if (country.contentEquals("Sweden") || country.contentEquals("China") || country.contentEquals("UK")
 							|| country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
-						driver.findElement(By.xpath("//tr[17]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[17]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
-						driver.findElement(By.xpath("//tr[18]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[18]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
-						driver.findElement(By.xpath("//tr[15]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[15]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
-						driver.findElement(By.xpath("//tr[14]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[14]//a")));
 						return true;
 					} else if (country.contentEquals("Spain") || country.contentEquals("Singapore")) {
-						driver.findElement(By.xpath("//tr[16]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[16]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -237,23 +237,23 @@ public class Reseller extends AbstractPage {
 				case "BAP-DWM: Business Process Modeling":
 					if (country.contentEquals("Sweden") || country.contentEquals("China") || country.contentEquals("UK")
 							|| country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
-						driver.findElement(By.xpath("//tr[18]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[18]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
 
-						driver.findElement(By.xpath("//tr[19]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[19]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
 
-						driver.findElement(By.xpath("//tr[16]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[16]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
 
-						driver.findElement(By.xpath("//tr[15]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[15]//a")));
 						return true;
 					} else if (country.contentEquals("Spain") || country.contentEquals("Singapore")) {
 
-						driver.findElement(By.xpath("//tr[17]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[17]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -265,23 +265,23 @@ public class Reseller extends AbstractPage {
 					if (country.contentEquals("Sweden") || country.contentEquals("China") || country.contentEquals("UK")
 							|| country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
 
-						driver.findElement(By.xpath("//tr[19]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[19]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
 
-						driver.findElement(By.xpath("//tr[20]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[20]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
 
-						driver.findElement(By.xpath("//tr[17]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[17]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
 
-						driver.findElement(By.xpath("//tr[17]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[17]//a")));
 						return true;
 					} else if (country.contentEquals("Spain") || country.contentEquals("Singapore")) {
 
-						driver.findElement(By.xpath("//tr[18]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[18]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -293,23 +293,23 @@ public class Reseller extends AbstractPage {
 					if (country.contentEquals("Sweden") || country.contentEquals("China") || country.contentEquals("UK")
 							|| country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
 
-						driver.findElement(By.xpath("//tr[20]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[20]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
 
-						driver.findElement(By.xpath("//tr[21]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[21]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
 
-						driver.findElement(By.xpath("//tr[18]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[18]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
 
-						driver.findElement(By.xpath("//tr[16]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[16]//a")));
 						return true;
 					} else if (country.contentEquals("Spain") || country.contentEquals("Singapore")) {
 
-						driver.findElement(By.xpath("//tr[19]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[19]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -321,23 +321,23 @@ public class Reseller extends AbstractPage {
 					if (country.contentEquals("Sweden") || country.contentEquals("China") || country.contentEquals("UK")
 							|| country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
 
-						driver.findElement(By.xpath("//tr[21]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[21]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
 
-						driver.findElement(By.xpath("//tr[22]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[22]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
 
-						driver.findElement(By.xpath("//tr[19]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[19]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
 
-						driver.findElement(By.xpath("//tr[18]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[18]//a")));
 						return true;
 					} else if (country.contentEquals("Spain") || country.contentEquals("Singapore")) {
 
-						driver.findElement(By.xpath("//tr[20]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[20]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -349,23 +349,23 @@ public class Reseller extends AbstractPage {
 					if (country.contentEquals("Sweden") || country.contentEquals("China") || country.contentEquals("UK")
 							|| country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
 
-						driver.findElement(By.xpath("//tr[22]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[22]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
 
-						driver.findElement(By.xpath("//tr[23]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[23]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
 
-						driver.findElement(By.xpath("//tr[20]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[20]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
 
-						driver.findElement(By.xpath("//tr[19]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[19]//a")));
 						return true;
 					} else if (country.contentEquals("Spain") || country.contentEquals("Singapore")) {
 
-						driver.findElement(By.xpath("//tr[21]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[21]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -377,23 +377,23 @@ public class Reseller extends AbstractPage {
 					if (country.contentEquals("Sweden") || country.contentEquals("China") || country.contentEquals("UK")
 							|| country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
 
-						driver.findElement(By.xpath("//tr[23]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[23]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
 
-						driver.findElement(By.xpath("//tr[24]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[24]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
 
-						driver.findElement(By.xpath("//tr[21]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[21]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
 
-						driver.findElement(By.xpath("//tr[20]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[20]//a")));
 						return true;
 					} else if (country.contentEquals("Spain") || country.contentEquals("Singapore")) {
 
-						driver.findElement(By.xpath("//tr[22]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[22]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -406,27 +406,27 @@ public class Reseller extends AbstractPage {
 					if (country.contentEquals("Sweden") || country.contentEquals("China") || country.contentEquals("UK")
 							|| country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
 
-						driver.findElement(By.xpath("//tr[26]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[26]//a")));
 						return true;
 					} else if (country.contentEquals("Singapore")) {
 
-						driver.findElement(By.xpath("//tr[24]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[24]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
 
-						driver.findElement(By.xpath("//tr[27]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[27]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
 
-						driver.findElement(By.xpath("//tr[23]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[23]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
 
-						driver.findElement(By.xpath("//tr[22]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[22]//a")));
 						return true;
 					} else if (country.contentEquals("Spain")) {
 
-						driver.findElement(By.xpath("//tr[25]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[25]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -438,27 +438,27 @@ public class Reseller extends AbstractPage {
 					if (country.contentEquals("Sweden") || country.contentEquals("China") || country.contentEquals("UK")
 							|| country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
 
-						driver.findElement(By.xpath("//tr[27]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[27]//a")));
 						return true;
 					} else if (country.contentEquals("Singapore")) {
 
-						driver.findElement(By.xpath("//tr[25]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[25]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
 
-						driver.findElement(By.xpath("//tr[28]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[28]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
 
-						driver.findElement(By.xpath("//tr[24]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[24]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
 
-						driver.findElement(By.xpath("//tr[23]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[23]//a")));
 						return true;
 					} else if (country.contentEquals("Spain")) {
 
-						driver.findElement(By.xpath("//tr[26]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[26]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -470,27 +470,27 @@ public class Reseller extends AbstractPage {
 					if (country.contentEquals("Sweden") || country.contentEquals("China") || country.contentEquals("UK")
 							|| country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
 
-						driver.findElement(By.xpath("//tr[28]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[28]//a")));
 						return true;
 					} else if (country.contentEquals("Singapore")) {
 
-						driver.findElement(By.xpath("//tr[26]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[26]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
 
-						driver.findElement(By.xpath("//tr[29]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[29]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
 
-						driver.findElement(By.xpath("//tr[25]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[25]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
 
-						driver.findElement(By.xpath("//tr[24]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[24]//a")));
 						return true;
 					} else if (country.contentEquals("Spain")) {
 
-						driver.findElement(By.xpath("//tr[27]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[27]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -503,23 +503,23 @@ public class Reseller extends AbstractPage {
 					if (country.contentEquals("Sweden") || country.contentEquals("China")
 							|| country.contentEquals("UK")) {
 
-						driver.findElement(By.xpath("//tr[30]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[30]//a")));
 						return true;
 					} else if (country.contentEquals("Singapore")) {
 
-						driver.findElement(By.xpath("//tr[28]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[28]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
 
-						driver.findElement(By.xpath("//tr[31]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[31]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
 
-						driver.findElement(By.xpath("//tr[27]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[27]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
 
-						driver.findElement(By.xpath("//tr[26]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[26]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -531,23 +531,23 @@ public class Reseller extends AbstractPage {
 					if (country.contentEquals("Sweden") || country.contentEquals("China")
 							|| country.contentEquals("UK")) {
 
-						driver.findElement(By.xpath("//tr[31]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[31]//a")));
 						return true;
 					} else if (country.contentEquals("Singapore")) {
 
-						driver.findElement(By.xpath("//tr[29]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[29]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
 
-						driver.findElement(By.xpath("//tr[32]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[32]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
 
-						driver.findElement(By.xpath("//tr[28]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[28]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
 
-						driver.findElement(By.xpath("//tr[27]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[27]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -559,23 +559,23 @@ public class Reseller extends AbstractPage {
 					if (country.contentEquals("Sweden") || country.contentEquals("China")
 							|| country.contentEquals("UK")) {
 
-						driver.findElement(By.xpath("//tr[32]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[32]//a")));
 						return true;
 					} else if (country.contentEquals("Singapore")) {
 
-						driver.findElement(By.xpath("//tr[30]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[30]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
 
-						driver.findElement(By.xpath("//tr[33]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[33]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
 
-						driver.findElement(By.xpath("//tr[29]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[29]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
 
-						driver.findElement(By.xpath("//tr[28]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[28]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -587,23 +587,23 @@ public class Reseller extends AbstractPage {
 					if (country.contentEquals("Sweden") || country.contentEquals("China")
 							|| country.contentEquals("UK")) {
 
-						driver.findElement(By.xpath("//tr[33]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[33]//a")));
 						return true;
 					} else if (country.contentEquals("Singapore")) {
 
-						driver.findElement(By.xpath("//tr[31]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[31]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
 
-						driver.findElement(By.xpath("//tr[34]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[34]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
 
-						driver.findElement(By.xpath("//tr[30]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[30]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
 
-						driver.findElement(By.xpath("//tr[29]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[29]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -615,23 +615,23 @@ public class Reseller extends AbstractPage {
 					if (country.contentEquals("Sweden") || country.contentEquals("China")
 							|| country.contentEquals("UK")) {
 
-						driver.findElement(By.xpath("//tr[34]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[34]//a")));
 						return true;
 					} else if (country.contentEquals("Singapore")) {
 
-						driver.findElement(By.xpath("//tr[32]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[32]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
 
-						driver.findElement(By.xpath("//tr[35]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[35]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
 
-						driver.findElement(By.xpath("//tr[31]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[31]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
 
-						driver.findElement(By.xpath("//tr[30]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[30]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -643,23 +643,23 @@ public class Reseller extends AbstractPage {
 					if (country.contentEquals("Sweden") || country.contentEquals("China")
 							|| country.contentEquals("UK")) {
 
-						driver.findElement(By.xpath("//tr[35]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[35]//a")));
 						return true;
 					} else if (country.contentEquals("Singapore")) {
 
-						driver.findElement(By.xpath("//tr[33]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[33]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
 
-						driver.findElement(By.xpath("//tr[36]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[36]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
 
-						driver.findElement(By.xpath("//tr[32]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[32]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
 
-						driver.findElement(By.xpath("//tr[31]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[31]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -671,23 +671,23 @@ public class Reseller extends AbstractPage {
 					if (country.contentEquals("Sweden") || country.contentEquals("China")
 							|| country.contentEquals("UK")) {
 
-						driver.findElement(By.xpath("//tr[36]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[36]//a")));
 						return true;
 					} else if (country.contentEquals("Singapore")) {
 
-						driver.findElement(By.xpath("//tr[34]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[34]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
 
-						driver.findElement(By.xpath("//tr[37]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[37]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
 
-						driver.findElement(By.xpath("//tr[33]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[33]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
 
-						driver.findElement(By.xpath("//tr[32]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[32]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -699,25 +699,25 @@ public class Reseller extends AbstractPage {
 				case "AGX-GTB: Fundamentals of Lean and Agile":
 					if (country.contentEquals("Sweden") || country.contentEquals("China")
 							|| country.contentEquals("UK")) {
-						driver.findElement(By.xpath("//tr[38]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[38]//a")));
 						return true;
 					} else if (country.contentEquals("Singapore")) {
-						driver.findElement(By.xpath("//tr[36]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[36]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
-						driver.findElement(By.xpath("//tr[39]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[39]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
-						driver.findElement(By.xpath("//tr[35]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[35]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
-						driver.findElement(By.xpath("//tr[34]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[34]//a")));
 						return true;
 					} else if (country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
-						driver.findElement(By.xpath("//tr[30]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[30]//a")));
 						return true;
 					} else if (country.contentEquals("Spain")) {
-						driver.findElement(By.xpath("//tr[29]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[29]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -727,25 +727,25 @@ public class Reseller extends AbstractPage {
 				case "AGX-GWF: Continuous Improvement for with Lean and Kanban":
 					if (country.contentEquals("Sweden") || country.contentEquals("China")
 							|| country.contentEquals("UK")) {
-						driver.findElement(By.xpath("//tr[39]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[39]//a")));
 						return true;
 					} else if (country.contentEquals("Singapore")) {
-						driver.findElement(By.xpath("//tr[37]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[37]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
-						driver.findElement(By.xpath("//tr[40]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[40]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
-						driver.findElement(By.xpath("//tr[36]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[36]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
-						driver.findElement(By.xpath("//tr[35]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[35]//a")));
 						return true;
 					} else if (country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
-						driver.findElement(By.xpath("//tr[31]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[31]//a")));
 						return true;
 					} else if (country.contentEquals("Spain")) {
-						driver.findElement(By.xpath("//tr[30]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[30]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -755,25 +755,25 @@ public class Reseller extends AbstractPage {
 				case "AGX-GWB: Iterative Delivery with Scrum and Kanban":
 					if (country.contentEquals("Sweden") || country.contentEquals("China")
 							|| country.contentEquals("UK")) {
-						driver.findElement(By.xpath("//tr[40]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[40]//a")));
 						return true;
 					} else if (country.contentEquals("Singapore")) {
-						driver.findElement(By.xpath("//tr[38]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[38]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
-						driver.findElement(By.xpath("//tr[41]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[41]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
-						driver.findElement(By.xpath("//tr[37]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[37]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
-						driver.findElement(By.xpath("//tr[36]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[36]//a")));
 						return true;
 					} else if (country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
-						driver.findElement(By.xpath("//tr[32]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[32]//a")));
 						return true;
 					} else if (country.contentEquals("Spain")) {
-						driver.findElement(By.xpath("//tr[31]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[31]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");
@@ -783,25 +783,25 @@ public class Reseller extends AbstractPage {
 				case "AGX-GWD: Lean and Agile Project Management":
 					if (country.contentEquals("Sweden") || country.contentEquals("China")
 							|| country.contentEquals("UK")) {
-						driver.findElement(By.xpath("//tr[41]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[41]//a")));
 						return true;
 					} else if (country.contentEquals("Singapore")) {
-						driver.findElement(By.xpath("//tr[39]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[39]//a")));
 						return true;
 					} else if (country.contentEquals("Germany")) {
-						driver.findElement(By.xpath("//tr[42]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[42]//a")));
 						return true;
 					} else if (country.contentEquals("India")) {
-						driver.findElement(By.xpath("//tr[38]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[38]//a")));
 						return true;
 					} else if (country.contentEquals("Australia")) {
-						driver.findElement(By.xpath("//tr[37]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[37]//a")));
 						return true;
 					} else if (country.contentEquals("SouthAfrica") || country.contentEquals("Italy")) {
-						driver.findElement(By.xpath("//tr[33]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[33]//a")));
 						return true;
 					} else if (country.contentEquals("Spain")) {
-						driver.findElement(By.xpath("//tr[32]//a")).click();
+						UIUtils.clickElementJScript(driver, driver.findElement(By.xpath("//tr[32]//a")));
 						return true;
 					} else {
 						System.out.println("The Country Name is " + country + " which is not listed");

@@ -20,11 +20,11 @@
       			<include name="CPC_AwaitingAccess" />
       			<include name="Notes_CPC_Pending" />
       			<include name="Notes_CPC_AwaitingAccess" />
-      			<exclude name="Registration_Verification_ResellerToCPC" />
-      			<exclude name="CPC_License_validation" />
-      			<exclude name="ResellerApproval_CPC_processedAccess_Granted_Learning" />
-      			<exclude name="Reseller_sessionmapping" />
-      			<exclude name="Reseller_sessionmapping_FutureExpectedDate" />
+      			<include name="Registration_Verification_ResellerToCPC" />
+      			<include name="CPC_License_validation" />
+      			<include name="ResellerApproval_CPC_processedAccess_Granted_Learning" />
+      			<include name="Reseller_sessionmapping" />
+      			<include name="Reseller_sessionmapping_FutureExpectedDate" />
       			<include name="CPC_PublicWebsite_Registration_purchaseorder" />
       			<include name="CPC_PublicWebsite_Registration_Check" />
       			<include name="CPC_PublicWebsite_Registration_License" />

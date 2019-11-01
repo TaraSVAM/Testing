@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-passed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
                     </span>
-                    <div class="method-list-content failed suite-Suite">
+                    <div class="method-list-content passed suite-Suite">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.svam.twentyeighty.tests.Regression" hash-for-method="Registration_Verification_ResellerToCPC">Registration_Verification_ResellerToCPC</a> <!-- method navigator-link -->
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.svam.twentyeighty.tests.Regression" hash-for-method="ResellerApproval_CPC_processedAccess_Granted_Learning">ResellerApproval_CPC_processedAccess_Granted_Learning</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,26 +117,21 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
+          <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">com.svam.twentyeighty.tests.Regression</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Registration_Verification_ResellerToCPC">
-                  </a> <!-- Registration_Verification_ResellerToCPC -->
-                  <span class="method-name">Registration_Verification_ResellerToCPC</span>
-                  <div class="stack-trace">java.lang.AssertionError: The course is selected did not expect to find [true] but found [false]
-	at com.svam.twentyeighty.tests.Regression.Registration_Verification_ResellerToCPC(Regression.java:1050)
-	at java.util.ArrayList.forEach(Unknown Source)
-... Removed 30 stack frames
-</div> <!-- stack-trace -->
+                  <a name="ResellerApproval_CPC_processedAccess_Granted_Learning">
+                  </a> <!-- ResellerApproval_CPC_processedAccess_Granted_Learning -->
+                  <span class="method-name">ResellerApproval_CPC_processedAccess_Granted_Learning</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -152,7 +147,7 @@
       &lt;class name=&quot;com.svam.driver.TestDriver&quot;/&gt;
       &lt;class name=&quot;com.svam.twentyeighty.tests.Regression&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;Registration_Verification_ResellerToCPC&quot;/&gt;
+          &lt;include name=&quot;ResellerApproval_CPC_processedAccess_Granted_Learning&quot;/&gt;
           &lt;exclude name=&quot;CPC_Intacct_Id_Added&quot;/&gt;
           &lt;exclude name=&quot;CPC_Intacct_ID_Details_Work&quot;/&gt;
           &lt;exclude name=&quot;verifyIntacctID&quot;/&gt;
@@ -167,8 +162,8 @@
           &lt;exclude name=&quot;CPC_AwaitingAccess&quot;/&gt;
           &lt;exclude name=&quot;Notes_CPC_Pending&quot;/&gt;
           &lt;exclude name=&quot;Notes_CPC_AwaitingAccess&quot;/&gt;
+          &lt;exclude name=&quot;Registration_Verification_ResellerToCPC&quot;/&gt;
           &lt;exclude name=&quot;CPC_License_validation&quot;/&gt;
-          &lt;exclude name=&quot;ResellerApproval_CPC_processedAccess_Granted_Learning&quot;/&gt;
           &lt;exclude name=&quot;Reseller_sessionmapping&quot;/&gt;
           &lt;exclude name=&quot;Reseller_sessionmapping_FutureExpectedDate&quot;/&gt;
           &lt;exclude name=&quot;CPC_PublicWebsite_Registration_purchaseorder&quot;/&gt;
@@ -219,14 +214,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Registration_Verification_ResellerToCPC')
+data.setCell(0, 1, 'ResellerApproval_CPC_processedAccess_Granted_Learning')
 data.setCell(0, 2, 'com.svam.twentyeighty.tests.Regression')
-data.setCell(0, 3, 5599);
+data.setCell(0, 3, 131234);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -255,9 +250,9 @@ return data;
                 <br/>
                 <span class="ignored-method-name">Reseller_sessionmapping_FutureExpectedDate</span>
                 <br/>
-                <span class="ignored-method-name">CPC_Expectedstartdate</span>
-                <br/>
                 <span class="ignored-method-name">CPC_PublicWebsite_Registration_License</span>
+                <br/>
+                <span class="ignored-method-name">CPC_Expectedstartdate</span>
                 <br/>
                 <span class="ignored-method-name">CPC_Deleted</span>
                 <br/>
@@ -271,6 +266,8 @@ return data;
                 <br/>
                 <span class="ignored-method-name">CPC_Intacct_Id_Added</span>
                 <br/>
+                <span class="ignored-method-name">Registration_Verification_ResellerToCPC</span>
+                <br/>
                 <span class="ignored-method-name">verifyIntacctID</span>
                 <br/>
                 <span class="ignored-method-name">Futurestartdate_sessionmapping</span>
@@ -283,13 +280,11 @@ return data;
                 <br/>
                 <span class="ignored-method-name">Reseller_sessionmapping</span>
                 <br/>
-                <span class="ignored-method-name">CPC_Intacct_ID_Details_Work</span>
-                <br/>
                 <span class="ignored-method-name">CPC_Dummy_Intacct_ID_Save_Record</span>
                 <br/>
-                <span class="ignored-method-name">CPC_Intacct_ID_Details_UIElements</span>
+                <span class="ignored-method-name">CPC_Intacct_ID_Details_Work</span>
                 <br/>
-                <span class="ignored-method-name">ResellerApproval_CPC_processedAccess_Granted_Learning</span>
+                <span class="ignored-method-name">CPC_Intacct_ID_Details_UIElements</span>
                 <br/>
                 <span class="ignored-method-name">testTearDown</span>
                 <br/>
@@ -313,36 +308,34 @@ return data;
               <div class="chronological-class-name">com.svam.twentyeighty.tests.Regression</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">appInitilization</span>
-                <span class="method-start">4694 ms</span>
+                <span class="method-start">5667 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
-                <span class="method-name">startReporting(public void com.svam.twentyeighty.tests.Regression.Registration_Verification_ResellerToCPC())</span>
-                <span class="method-start">4915 ms</span>
+                <span class="method-name">startReporting(public void com.svam.twentyeighty.tests.Regression.ResellerApproval_CPC_processedAccess_Granted_Lear...)</span>
+                <span class="method-start">5711 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">Registration_Verification_ResellerToCPC</span>
-                <span class="method-start">4999 ms</span>
+                <span class="method-name">ResellerApproval_CPC_processedAccess_Granted_Learning</span>
+                <span class="method-start">5785 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">testResult(public void com.svam.twentyeighty.tests.Regression.Registration_Verification_ResellerToCPC(), [TestR...)</span>
-                <span class="method-start">10601 ms</span>
+                <span class="method-name">testResult(public void com.svam.twentyeighty.tests.Regression.ResellerApproval_CPC_processedAccess_Granted_Lear...)</span>
+                <span class="method-start">137021 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">generateResult</span>
-                <span class="method-start">10896 ms</span>
+                <span class="method-start">150141 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">suiteTearDown</span>
-                <span class="method-start">11396 ms</span>
+                <span class="method-start">150504 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.svam.driver.TestDriver</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">testTearDown</span>
-                <span class="method-start">11455 ms</span>
+                <span class="method-start">150561 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
